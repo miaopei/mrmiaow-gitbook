@@ -1,0 +1,16 @@
+# Summary
+
+* [简介](README.md)
+* [C设计模式](CDesignMode/README.md)
+    * [概览](CDesignMode/Overview.md)
+    * [状态机模式](CDesignMode/StateMechine.md)
+    * [责任链模式](CDesignMode/Chain_of_Responsibility.md)
+    * [观察者模式](CDesignMode/Observer.md)
+    * [命令模式](CDesignMode/Command.md)
+    * [适配及系列模式](CDesignMode/Adapter.md)
+    * [建造者模式](CDesignMode/Builder.md)
+    * [外观模式](CDesignMode/Facade.md)
+    * [访问者模式](CDesignMode/Visitor.md)
+    * [非典型模式](CDesignMode/Atypical.md)
+* [C内存-运行机制](CMemory/README.md)
+

@@ -1,0 +1,90 @@
+{
+    "gitbook": "3.x.x",
+    "title": "C note",
+    "description": "C note",
+    "author": "Mr.Miaow",
+    "language": "zh-hans",
+    "root": ".",
+    "plugins": [
+        "-lunr", 
+        "-search", 
+        "search-pro",
+        "prism", 
+        "ace",
+        "copy-code-button", 
+        "splitter", 
+        "back-to-top-button", 
+        "chapter-fold",
+        "expandable-chapters-small",
+        "favicon", 
+        "autotheme", 
+        "advanced-emoji",
+        "book-summary-scroll-position-saver", 
+        "anchor-navigation-ex",
+        "emphasize",
+        "theme-comscore",
+        "multipart"
+    ],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "fontSettings": {
+            "family": "serif",
+            "size": 2
+        },
+        "autotheme": {
+            "white": [9, 10, 11, 12, 13, 14, 15, 16, 17],
+            "sepia": [6, 7, 8, 18, 19],
+            "night": [20, 21, 22, 23, 0, 1, 2, 3, 4, 5]
+        },
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-tomorrow.css"
+            ]
+        },
+        "anchor-navigation-ex": {
+            "showLevel": true,
+            "associatedWithSummary": false,
+            "printLog": false,
+            "multipleH1": true,
+            "mode": "float",
+            "showGoTop": true,
+            "float": {
+                "floatIcon": "fa fa-navicon",
+                "showLevelIcon": false,
+                "level1Icon": "fa fa-hand-o-right",
+                "level2Icon": "fa fa-hand-o-right",
+                "level3Icon": "fa fa-hand-o-right"
+            },
+            "pageTop": {
+                "showLevelIcon": false,
+                "level1Icon": "fa fa-hand-o-right",
+                "level2Icon": "fa fa-hand-o-right",
+                "level3Icon": "fa fa-hand-o-right"
+            }
+        },
+        "favicon": {
+            "shortcut": "/assets/images/favicon.ico",
+            "bookmark": "/assets/images/favicon.ico",
+            "appleTouch": "/assets/images/apple-touch-icon.png",
+            "appleTouchMore": {
+                "120x120": "/assets/images/apple-touch-icon-120x120.png",
+                "180x180": "/assets/images/apple-touch-icon-180x180.png"
+            }
+        }
+
+    },
+    "pdf": {
+        "pageNumbers": true,
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "paperSize": "a4",
+        "margin": {
+            "right": 62,
+            "left": 62,
+            "top": 56,
+            "bottom": 56
+        }
+    }
+}
