@@ -56,6 +56,7 @@ int light_fsm_event(int cur_stat, int event)
 {
     int next_state;
     next_state = light_fsm_simple_table[cur_stat][event];
+    return next_state;
 }
 
 int main()
@@ -80,7 +81,7 @@ int main()
 
 ```c
 if(next_state == STATE_LIGHT_ON) { 
-    printf("light is on";
+    printf("light is on");
 }
 ```
 
