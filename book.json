@@ -86,5 +86,6 @@
             "top": 56,
             "bottom": 56
         }
-    }
+    },
+    "ignores" : ["_book", "node_modules"]
 }

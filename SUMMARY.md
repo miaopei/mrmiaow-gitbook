@@ -1,6 +1,10 @@
 # Summary
 
 * [简介](README.md)
+* [O-RAN Note](ORAN/README.md)
+* [Vim](Vim/README.md)
+    * [vimplus](Vim/VimNote.md)
+    * [vim 快捷键](Vim/vimHotKey.md)
 * [C设计模式](CDesignMode/README.md)
     * [概览](CDesignMode/Overview.md)
     * [状态机模式](CDesignMode/StateMechine.md)
