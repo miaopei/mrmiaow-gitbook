@@ -27,7 +27,7 @@
     ],
     "pluginsConfig": {
         "theme-default": {
-            "showLevel": true
+            "showLevel": false
         },
         "fontSettings": {
             "family": "serif",
@@ -73,7 +73,6 @@
                 "180x180": "/assets/images/apple-touch-icon-180x180.png"
             }
         }
-
     },
     "pdf": {
         "pageNumbers": true,
