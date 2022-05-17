@@ -77,27 +77,38 @@ O-RAN和v-RAN之间有交集，也有错开的部分。
 
 
 
-![O-RAN 架构](images/oran-%E6%9E%B6%E6%9E%84.png)
 
 
 
 
 
-![xRAN功能拆分7.2显示完整的处理链](images/xRan-split.png)
-
-
-
-![在这里插入图片描述](images/option7-8-0.png)
-
-![在这里插入图片描述](images/option7-8.png)
 
 
 
 
 
-**O-RAN的硬件白盒化：**
 
-![img](images/o-ran-write-box.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
