@@ -71,43 +71,39 @@ O-RAN和v-RAN之间有交集，也有错开的部分。
 
 **设备商专用硬件RAN => 设备商vRAN => 设备商的开放RAN  => 可替换开放RAN.**
 
+## ORAN快速概览与创业机会
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_05](images/oran-overview-01.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_07](images/oran-overview-02.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_08](images/oran-overview-03.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_09](images/oran-overview-04.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_10](images/oran-overview-05.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_11](images/oran-overview-06.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_12](images/oran-overview-07.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_13](images/oran-overview-08.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_14](images/oran-overview-09.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_15](images/oran-overview-10.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_16](images/oran-overview-11.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_17](images/oran-overview-12.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_18](images/oran-overview-13.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_19](images/oran-overview-14.png)
 
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_20](images/oran-overview-15.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![ORAN专题系列-23：ORAN快速概览与创业机会_创业_21](images/oran-overview-16.png)
 
 
 
@@ -115,6 +111,8 @@ O-RAN和v-RAN之间有交集，也有错开的部分。
 ## Reference
 
 > [美国力挺的Open RAN，真的能成功吗？](https://www.eet-china.com/mp/a34799.html)
+>
+> [通信-ORAN专题系列-new](https://blog.csdn.net/hiwangwenbing/category_10056821.html)
 >
 > [通信-ORAN专题系列](https://blog.51cto.com/u_11299290/category33/p_1)
 >
