@@ -456,7 +456,16 @@ if 的条件不会当作无条件真。
 
 
 
+
+
+
+
 [杂货边角（4）：C语言static, inline, volatile, const等关键字解析](https://blog.csdn.net/roger_ranger/article/details/78864417)
 
 [C/C++常见修饰符（inline&static&const&extern&volatile）](https://durant35.github.io/2017/07/06/programPearls_inline$static$const$extern$volatile/)
 
+[inline与static的关系](http://www.cnblogs.com/xkfz007/articles/2370640.html)
+
+[内联函数的使用及注意点](https://www.cnblogs.com/xkfz007/archive/2012/03/27/2420166.html)
+
+[内联函数(inline Function)浅析](https://www.huliujia.com/blog/4e4824434d272ec7be2bcf85c04cb2e57be3690e/)
