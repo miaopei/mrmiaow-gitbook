@@ -1,0 +1,900 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1. 无线电波 · C note</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Mr.Miaow">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.4G_5G.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ORAN/">
+            
+                <a href="../ORAN/">
+            
+                    
+                    O-RAN
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ORAN/1.ORAN_Architecture.html">
+            
+                <a href="../ORAN/1.ORAN_Architecture.html">
+            
+                    
+                    1. O-RAN 总体架构与概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ORAN/2.ORAN_white_box.html">
+            
+                <a href="../ORAN/2.ORAN_white_box.html">
+            
+                    
+                    2. O-RAN 白盒化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../ORAN/3.ORAN_OAM_OM.html">
+            
+                <a href="../ORAN/3.ORAN_OAM_OM.html">
+            
+                    
+                    3. O-RAN OAM操作维护管理架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../ORAN/4.ORAN_RIC.html">
+            
+                <a href="../ORAN/4.ORAN_RIC.html">
+            
+                    
+                    4. O-RAN 近实时无线接入网智能控制器RIC的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../ORAN/5.ORAN_netconf.html">
+            
+                <a href="../ORAN/5.ORAN_netconf.html">
+            
+                    
+                    5. O-RAN FrontHaul前传接口的网络配置管理协议netconf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../ORAN/6.ORAN_yang.html">
+            
+                <a href="../ORAN/6.ORAN_yang.html">
+            
+                    
+                    6. O-RAN FrontHaul前传接口的网络配置管理与Yang数据建模语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../ORAN/7.ORAN_nFAPI.html">
+            
+                <a href="../ORAN/7.ORAN_nFAPI.html">
+            
+                    
+                    7. nFAPI接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../ORAN/8.ORAN_eCPRI.html">
+            
+                <a href="../ORAN/8.ORAN_eCPRI.html">
+            
+                    
+                    8. eCPRI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../CcodeSummary/">
+            
+                <a href="../CcodeSummary/">
+            
+                    
+                    C/C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../CcodeSummary/CPlus/">
+            
+                <a href="../CcodeSummary/CPlus/">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../CcodeSummary/CPlus/1.cplus_overview-00.html">
+            
+                <a href="../CcodeSummary/CPlus/1.cplus_overview-00.html">
+            
+                    
+                    C++ 思维导图-01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../CcodeSummary/CPlus/2.cplus_overview-01.html">
+            
+                <a href="../CcodeSummary/CPlus/2.cplus_overview-01.html">
+            
+                    
+                    C++ 思维导图-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../CcodeSummary/CPlus/3.cplus_overview-02.html">
+            
+                <a href="../CcodeSummary/CPlus/3.cplus_overview-02.html">
+            
+                    
+                    C++ 思维导图-03
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../CcodeSummary/CSkillSummary/">
+            
+                <a href="../CcodeSummary/CSkillSummary/">
+            
+                    
+                    C技巧汇总
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../CcodeSummary/CSkillSummary/1.IPC.html">
+            
+                <a href="../CcodeSummary/CSkillSummary/1.IPC.html">
+            
+                    
+                    1. 进程间通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../CcodeSummary/CDesignMode/">
+            
+                <a href="../CcodeSummary/CDesignMode/">
+            
+                    
+                    C设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../CcodeSummary/CDesignMode/1.Overview.html">
+            
+                <a href="../CcodeSummary/CDesignMode/1.Overview.html">
+            
+                    
+                    1. 概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../CcodeSummary/CDesignMode/2.StateMechine.html">
+            
+                <a href="../CcodeSummary/CDesignMode/2.StateMechine.html">
+            
+                    
+                    2. 状态机模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../CcodeSummary/CDesignMode/3.Chain_of_Responsibility.html">
+            
+                <a href="../CcodeSummary/CDesignMode/3.Chain_of_Responsibility.html">
+            
+                    
+                    3. 责任链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../CcodeSummary/CDesignMode/4.Observer.html">
+            
+                <a href="../CcodeSummary/CDesignMode/4.Observer.html">
+            
+                    
+                    4. 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../CcodeSummary/CDesignMode/5.Command.html">
+            
+                <a href="../CcodeSummary/CDesignMode/5.Command.html">
+            
+                    
+                    5. 命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../CcodeSummary/CDesignMode/6.Adapter.html">
+            
+                <a href="../CcodeSummary/CDesignMode/6.Adapter.html">
+            
+                    
+                    6. 适配及系列模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../CcodeSummary/CDesignMode/7.Builder.html">
+            
+                <a href="../CcodeSummary/CDesignMode/7.Builder.html">
+            
+                    
+                    7. 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../CcodeSummary/CDesignMode/8.Facade.html">
+            
+                <a href="../CcodeSummary/CDesignMode/8.Facade.html">
+            
+                    
+                    8. 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../CcodeSummary/CDesignMode/9.Visitor.html">
+            
+                <a href="../CcodeSummary/CDesignMode/9.Visitor.html">
+            
+                    
+                    9. 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../CcodeSummary/CDesignMode/10.Atypical.html">
+            
+                <a href="../CcodeSummary/CDesignMode/10.Atypical.html">
+            
+                    
+                    10. 非典型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../CcodeSummary/CMemory/">
+            
+                <a href="../CcodeSummary/CMemory/">
+            
+                    
+                    C内存-运行机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PHY
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="1.电磁波.html">
+            
+                <a href="1.电磁波.html">
+            
+                    
+                    1. 无线电波
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="2.4G_5G.html">
+            
+                <a href="2.4G_5G.html">
+            
+                    
+                    2. 4G&5G专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="3.通信原理.html">
+            
+                <a href="3.通信原理.html">
+            
+                    
+                    3. 通信原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Python/">
+            
+                <a href="../Python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Vim/1.VimNote.html">
+            
+                <a href="../Vim/1.VimNote.html">
+            
+                    
+                    1. vimplus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Vim/2.vimHotKey.html">
+            
+                <a href="../Vim/2.vimHotKey.html">
+            
+                    
+                    2. vim 快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1. 无线电波</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x7535;&#x78C1;&#x6CE2;&#x6982;&#x8FF0;"><b>1.1. </b>&#x7535;&#x78C1;&#x6CE2;&#x6982;&#x8FF0;</a></li><li><span class="title-icon "></span><a href="#&#x65E0;&#x7EBF;&#x7535;&#x6CE2;"><b>1.2. </b>&#x65E0;&#x7EBF;&#x7535;&#x6CE2;</a></li><li><span class="title-icon "></span><a href="#&#x65E0;&#x7EBF;&#x901A;&#x4FE1;&#x9891;&#x7387;&#x5206;&#x914D;&#x8868;"><b>1.3. </b>&#x65E0;&#x7EBF;&#x901A;&#x4FE1;&#x9891;&#x7387;&#x5206;&#x914D;&#x8868;</a></li><li><span class="title-icon "></span><a href="#5g-nr-&#x9891;&#x6BB5;"><b>1.4. </b>5G NR &#x9891;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x56FD;&#x5185;&#x9891;&#x8C31;&#x5206;&#x914D;&#x60C5;&#x51B5;"><b>1.5. </b>&#x56FD;&#x5185;&#x9891;&#x8C31;&#x5206;&#x914D;&#x60C5;&#x51B5;</a></li><li><span class="title-icon "></span><a href="#&#x4E09;&#x5927;&#x8FD0;&#x8425;&#x5546;&#x9891;&#x7387;&#x5212;&#x5206;"><b>1.6. </b>&#x4E09;&#x5927;&#x8FD0;&#x8425;&#x5546;&#x9891;&#x7387;&#x5212;&#x5206;</a></li><li><span class="title-icon "></span><a href="#reference"><b>1.7. </b>Reference</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x7535;&#x78C1;&#x6CE2;&#x6982;&#x8FF0;"><a name="&#x7535;&#x78C1;&#x6CE2;&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#&#x7535;&#x78C1;&#x6CE2;&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7535;&#x78C1;&#x6CE2;&#x6982;&#x8FF0;</h2>
+<p><strong>&#x7535;&#x78C1;&#x6CE2;&#x7684;&#x4EA7;&#x751F;&#xFF1A;</strong></p>
+<ul>
+<li>&#x53D8;&#x5316;&#x7684;&#x7535;&#x573A; + &#x53D8;&#x5316;&#x7684;&#x78C1; &#x573A;&#x5F62;&#x6210;&#x7684;&#x7EDF;&#x4E00;&#x573A;&#x5728;&#x7A7A;&#x95F4;&#x4F20;&#x64AD;&#xFF0C;&#x5C31;&#x5F62;&#x6210;&#x7535;&#x78C1;&#x6CE2;&#x3002;</li>
+</ul>
+<p><strong>&#x7535;&#x78C1;&#x6CE2;&#x7684;&#x5206;&#x5E03;&#xFF1A;</strong></p>
+<ul>
+<li>&#x901A;&#x8FC7;&#x6CE2;&#x957F;&#x5927;&#x5C0F;&#x5B9A;&#x4E49;&#x6CE2;&#x7684;&#x5206;&#x5E03;&#xFF0C;&#x6CE2;&#x957F;&#x4ECE;&#x957F;&#x5230;&#x77ED;&#xFF08;&#x9891;&#x7387;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#xFF09;&#x5206;&#x5E03;&#x4E3A;&#xFF1A;<strong>&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#xFF0C;&#x7EA2;&#x5916;&#x7EBF;&#xFF0C;&#x53EF;&#x89C1;&#x5149;&#xFF0C;&#x7D2B;&#x5916;&#x7EBF;&#xFF0C;X&#x5C04;&#x7EBF;&#xFF0C;&#x4F3D;&#x9A6C;&#x5C04;&#x7EBF;&#x7B49;</strong>&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;</li>
+</ul>
+<p><img src="images/1.phy_note_02.png" alt="img"></p>
+<p><strong>&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#xFF1A;</strong></p>
+<p>&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x5305;&#x62EC;&#x957F;&#x6CE2;&#xFF0C;&#x4E2D;&#x6CE2;&#xFF0C;&#x77ED;&#x6CE2;&#xFF0C;&#x8D85;&#x77ED;&#x6CE2;&#x548C;&#x5FAE;&#x6CE2;&#xFF0C;<strong>&#x9891;&#x7387;&#x8303;&#x56F4;&#x4E3A;10KHz&#x5230;30GHz</strong>&#x3002;&#x6211;&#x4EEC;&#x65E5;&#x5E38;&#x6240;&#x7528;&#x7684;&#x65E0;&#x7EBF;AP&#xFF0C;&#x624B;&#x673A;&#xFF0C;&#x6536;&#x97F3;&#x673A;&#xFF0C;&#x5BF9;&#x8BB2;&#x673A;&#x90FD;&#x4F9D;&#x9760;&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x3002;&#x5982;&#x76EE;&#x524D;&#x4F7F;&#x7528;&#x7684;wifi&#x5C31;&#x5DE5;&#x4F5C;&#x5728;2.4GHz&#x548C;5GHz&#x9891;&#x6BB5;&#xFF0C;&#x518D;&#x5982;&#x6211;&#x56FD;5G&#xFF08;&#x7B2C;&#x4E94;&#x4EE3;&#x79FB;&#x52A8;&#x901A;&#x4FE1;&#x6280;&#x672F;&#xFF09;&#x901A;&#x4FE1;&#x5DE5;&#x4F5C;&#x7684;&#x9891;&#x6BB5;&#x4E3A;<strong>3.3GHz-3.6GHz,4.8GHz-5GHz</strong>&#x3002;&#x6709;&#x4EBA;&#x53EF;&#x80FD;&#x4F1A;&#x62C5;&#x5FC3;&#x4F1A;&#x4E0D;&#x4F1A;&#x4E0E;5Gwifi&#x5F62;&#x6210;&#x5E72;&#x6270;&#xFF0C;&#x7B54;&#x6848;&#x662F;&#x4E0D;&#x4F1A;&#xFF0C;&#x56E0;&#x4E3A;5GHz wifi&#x5305;&#x542B;5.1GHz&#x548C;5.8GHz&#x5DE6;&#x53F3;&#xFF0C;&#x4E0E;&#x7B2C;&#x4E94;&#x4EE3;&#x901A;&#x4FE1;&#x9891;&#x6BB5;&#x6CA1;&#x6709;&#x91CD;&#x53E0;&#x3002;</p>
+<p>&#x9891;&#x7387;&#x8D8A;&#x9AD8;&#xFF0C;&#x662F;&#x5426;&#x7A7F;&#x900F;&#x529B;&#x8D8A;&#x5F31;&#xFF1F;</p>
+<p>&#x5BF9;&#x4E8E;&#x53EF;&#x89C1;&#x5149;&#x4EE5;&#x4E0B;&#x7684;&#x7535;&#x78C1;&#x6CE2;&#xFF08;&#x5305;&#x62EC;&#x53EF;&#x89C1;&#x5149;&#xFF09;&#xFF0C;&#x5982;<strong>&#x7535;&#x78C1;&#x6CE2;&#xFF0C;&#x6EE1;&#x8DB3;&#x9891;&#x7387;&#x8D8A;&#x9AD8;&#xFF0C;&#x7A7F;&#x900F;&#x6027;&#x8D8A;&#x5F31;</strong>&#xFF0C;&#x5982;5G wifi&#x7684;&#x7A7F;&#x5899;&#x80FD;&#x529B;&#x6CA1;&#x6709;2.4G wifi&#x5F3A;&#x3002;</p>
+<p><strong>&#x5BF9;&#x4E8E;&#x53EF;&#x89C1;&#x5149;&#x4EE5;&#x4E0A;&#x7684;&#x5730;&#x78C1;&#x6CE2;&#xFF0C;&#x5982;X&#x5C04;&#x7EBF;&#xFF0C;&#x6070;&#x6070;&#x76F8;&#x53CD;&#xFF0C;&#x9891;&#x7387;&#x8D8A;&#x5F3A;&#xFF0C;&#x7A7F;&#x900F;&#x529B;&#x8D8A;&#x5F3A;&#xFF0C;&#x5982;X&#x5C04;&#x7EBF;&#x53EF;&#x4EE5;&#x7A7F;&#x900F;&#x91D1;&#x5C5E;&#x3002;</strong></p>
+<p>&#x5177;&#x4F53;&#x539F;&#x56E0;&#x548C;&#x5149;&#x5B50;&#x80FD;&#x91CF;&#x6709;&#x5173;&#xFF0C;&#x53EF;&#x89C1;&#x5149;&#x7684;&#x5149;&#x5B50;&#x80FD;&#x529B;&#x5927;&#xFF0C;&#x8DB3;&#x4EE5;&#x8BA9;&#x5176;&#x4ED6;&#x963B;&#x6321;&#x5B83;&#x4F20;&#x64AD;&#x7684;&#x7269;&#x4F53;&#x7684;&#x7C92;&#x5B50;&#x53D1;&#x751F;&#x80FD;&#x91CF;&#x7EA7;&#x8DC3;&#x53D8;&#xFF0C;&#x6240;&#x4EE5;&#x80FD;&#x91CF;&#x88AB;&#x5438;&#x6536;&#x4E86;&#xFF0C;&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x5149;&#x5B50;&#x80FD;&#x91CF;&#x4E0D;&#x591F;&#xFF0C;&#x6700;&#x591A;&#x56E0;&#x4E3A;&#x635F;&#x8017;&#x5931;&#x53BB;&#x4E00;&#x90E8;&#x5206;&#x80FD;&#x91CF;&#x3002;&#x800C;X&#x5149;&#x7684;&#x5149;&#x5B50;&#x80FD;&#x91CF;&#x66F4;&#x5927;&#xFF0C;&#x5728;&#x4F7F;&#x969C;&#x788D;&#x7269;&#x53D1;&#x751F;&#x80FD;&#x7EA7;&#x8DC3;&#x53D8;&#x4E4B;&#x540E;&#xFF0C;&#x8FD8;&#x6709;&#x8DB3;&#x591F;&#x80FD;&#x91CF;&#x7A7F;&#x8D8A;&#x969C;&#x788D;&#x7269;&#x3002;</p>
+<hr>
+<h2 id="&#x65E0;&#x7EBF;&#x7535;&#x6CE2;"><a name="&#x65E0;&#x7EBF;&#x7535;&#x6CE2;" class="anchor-navigation-ex-anchor" href="#&#x65E0;&#x7EBF;&#x7535;&#x6CE2;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x65E0;&#x7EBF;&#x7535;&#x6CE2;</h2>
+<p><strong>&#x65E0;&#x7EBF;&#x7535;&#x6CE2;</strong>&#xFF08;&#x82F1;&#x8BED;&#xFF1A;Radio waves&#xFF09;&#x6709;&#x65F6;&#x4E5F;&#x79F0;<strong>&#x65E0;&#x7EBF;&#x7535;</strong>&#x3001;<strong>&#x5C04;&#x9891;</strong>&#xFF0C;&#x662F;&#x4E00;&#x79CD;<a href="https://zh.wikipedia.org/wiki/&#x7535;&#x78C1;&#x6CE2;" target="_blank">&#x7535;&#x78C1;&#x6CE2;</a>&#xFF0C;&#x5176;<a href="https://zh.wikipedia.org/wiki/&#x6CE2;&#x957F;" target="_blank">&#x6CE2;&#x957F;</a>&#x5728;<a href="https://zh.wikipedia.org/wiki/&#x96FB;&#x78C1;&#x6CE2;&#x8B5C;" target="_blank">&#x7535;&#x78C1;&#x6CE2;&#x8C31;</a>&#x4E2D;&#x6BD4;<a href="https://zh.wikipedia.org/wiki/&#x7EA2;&#x5916;&#x7EBF;" target="_blank">&#x7EA2;&#x5916;&#x7EBF;</a>&#x957F;&#x3002;&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x7684;<a href="https://zh.wikipedia.org/wiki/&#x983B;&#x7387;" target="_blank">&#x9891;&#x7387;</a>&#x5728;300 <a href="https://zh.wikipedia.org/wiki/&#x8D6B;&#x5179;" target="_blank">GHz</a>&#x5230;3 <a href="https://zh.wikipedia.org/wiki/&#x8D6B;&#x5179;" target="_blank">kHz</a>&#x4E4B;&#x95F4;&#xFF0C;&#x4F46;&#x4E5F;&#x6709;&#x5B9A;&#x4E49;&#x5C06;&#x4EFB;&#x4F55;1 GHz&#x6216;3 GHz&#x4EE5;&#x4E0A;&#x7684;&#x7535;&#x6CE2;&#x5212;&#x4E3A;<a href="https://zh.wikipedia.org/wiki/&#x5FAE;&#x6CE2;" target="_blank">&#x5FAE;&#x6CE2;</a>&#x3002;&#x5F53;&#x9891;&#x7387;&#x5728;300 GHz&#x65F6;&#xFF0C;&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x5BF9;&#x5E94;&#x7684;&#x6CE2;&#x957F;&#x4E3A;1 mm&#xFF08;0.039&#x82F1;&#x5BF8;&#xFF09;&#xFF1B;&#x5728;3 kHz&#x65F6;&#xFF0C;&#x6CE2;&#x957F;&#x4E3A;100 km&#xFF08;62 mi&#xFF09;&#x3002;&#x548C;&#x5176;&#x4ED6;&#x7535;&#x78C1;&#x6CE2;&#x4E00;&#x6837;&#xFF0C;&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x4E5F;&#x4EE5;&#x5149;&#x901F;&#x884C;&#x8FDB;&#x3002;</p>
+<p><strong>&#x81EA;&#x7136;&#x754C;&#x4E2D;&#x7684;&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x4E3B;&#x8981;&#x662F;&#x7531;<a href="https://zh.wikipedia.org/wiki/&#x95EA;&#x7535;" target="_blank">&#x95EA;&#x7535;</a>&#x6216;&#x8005;<a href="https://zh.wikipedia.org/wiki/&#x5C04;&#x7535;&#x5929;&#x6587;&#x5B66;" target="_blank">&#x5B87;&#x5B99;&#x5929;&#x4F53;</a>&#x5F62;&#x6210;&#x3002;</strong></p>
+<p>&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x7531;<a href="https://zh.wikipedia.org/wiki/&#x53D1;&#x9001;&#x5668;" target="_blank">&#x65E0;&#x7EBF;&#x7535;&#x53D1;&#x5C04;&#x5668;</a>&#x4EA7;&#x751F;&#xFF0C;&#x5E76;&#x7531;<a href="https://zh.wikipedia.org/wiki/&#x65E0;&#x7EBF;&#x7535;&#x63A5;&#x6536;&#x673A;" target="_blank">&#x65E0;&#x7EBF;&#x7535;&#x63A5;&#x6536;&#x5668;</a>&#x4F7F;&#x7528;<a href="https://zh.wikipedia.org/wiki/&#x5929;&#x7EBF;" target="_blank">&#x5929;&#x7EBF;&#x63A5;&#x6536;</a>&#x3002;&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x5728;&#x73B0;&#x4EE3;&#x6280;&#x672F;&#x4E2D;&#x5E7F;&#x6CDB;&#x7528;&#x4E8E;&#x56FA;&#x5B9A;&#x548C;&#x79FB;&#x52A8;<a href="https://zh.wikipedia.org/wiki/&#x65E0;&#x7EBF;&#x7535;" target="_blank">&#x65E0;&#x7EBF;&#x7535;&#x901A;&#x4FE1;</a>&#x3001;<a href="https://zh.wikipedia.org/wiki/&#x5E7F;&#x64AD;" target="_blank">&#x5E7F;&#x64AD;</a>&#x3001;<a href="https://zh.wikipedia.org/wiki/&#x96F7;&#x8FBE;" target="_blank">&#x96F7;&#x8FBE;</a>&#x548C;<a href="https://zh.wikipedia.org/w/index.php?title=&#x65E0;&#x7EBF;&#x7535;&#x5BFC;&#x822A;&amp;action=edit&amp;redlink=1" target="_blank">&#x65E0;&#x7EBF;&#x7535;&#x5BFC;&#x822A;</a>&#x3001;<a href="https://zh.wikipedia.org/wiki/&#x901A;&#x8A0A;&#x885B;&#x661F;" target="_blank">&#x901A;&#x4FE1;&#x536B;&#x661F;</a>&#x3001;<a href="https://zh.wikipedia.org/wiki/&#x65E0;&#x7EBF;&#x7F51;&#x7EDC;" target="_blank">&#x65E0;&#x7EBF;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;</a>&#x7B49;&#x3002;&#x4E0D;&#x540C;&#x9891;&#x7387;&#x7684;&#x65E0;&#x7EBF;&#x7535;&#x6CE2;&#x5728;&#x5730;&#x7403;&#x5927;&#x6C14;&#x5C42;&#x4E2D;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x64AD;&#x7279;&#x6027;&#xFF1B;&#x957F;&#x6CE2;&#x53EF;&#x4EE5;&#x5728;&#x5C71;&#x8109;&#x7B49;&#x969C;&#x788D;&#x7269;&#x5468;&#x56F4;<a href="https://zh.wikipedia.org/wiki/&#x884D;&#x5C04;" target="_blank">&#x884D;&#x5C04;</a>&#x5E76;&#x968F;&#x5730;&#x7403;&#x8868;&#x9762;&#x8FDB;&#x884C;&#x4F20;&#x64AD;&#xFF08;<a href="https://zh.wikipedia.org/wiki/&#x9762;&#x6CE2;" target="_blank">&#x5730;&#x6CE2;</a>&#xFF09;&#xFF0C;&#x8F83;&#x77ED;&#x7684;&#x6CE2;&#x53EF;&#x4EE5;&#x4ECE;<a href="https://zh.wikipedia.org/wiki/&#x7535;&#x79BB;&#x5C42;" target="_blank">&#x7535;&#x79BB;&#x5C42;</a>&#x88AB;&#x53CD;&#x5C04;&#x5E76;&#x4F20;&#x64AD;&#x81F3;&#x5730;&#x5E73;&#x7EBF;&#x4EE5;&#x5916;&#xFF08;<a href="https://zh.wikipedia.org/w/index.php?title=&#x5929;&#x6CE2;&amp;action=edit&amp;redlink=1" target="_blank">&#x5929;&#x6CE2;</a>&#xFF09;&#xFF0C;&#x800C;&#x77ED;&#x5F97;&#x591A;&#x7684;&#x6CE2;&#x957F;&#x5219;&#x5F88;&#x5C11;&#x5F2F;&#x66F2;&#x6216;&#x884D;&#x5C04;&#x5E76;&#x7EE7;&#x7EED;&#x4EE5;<a href="https://zh.wikipedia.org/wiki/&#x89C6;&#x7EBF;&#x4F20;&#x64AD;" target="_blank">&#x89C6;&#x7EBF;&#x4F20;&#x64AD;</a>&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4EEC;&#x7684;&#x4F20;&#x64AD;&#x8DDD;&#x79BB;&#x4EC5;&#x9650;&#x4E8E;<a href="https://zh.wikipedia.org/wiki/&#x5730;&#x5E73;&#x7DDA;" target="_blank">&#x5730;&#x5E73;&#x7EBF;</a>&#x3002;</p>
+<p><img src="images/1.phy_note_03.png" alt="&#x7535;&#x78C1;&#x9891;&#x8C31;&#x5212;&#x5206;"></p>
+<p><img src="images/1.phy_note_04.png" alt="&#x96F7;&#x8FBE;&#x6CE2;&#x6BB5;&#x5212;&#x5206;"></p>
+<p><img src="images/1.phy_note_05.png" alt="&#x5404;&#x6CE2;&#x6BB5;&#x96F7;&#x8FBE;&#x529F;&#x80FD;&#x8868;"></p>
+<p><img src="images/1.phy_note_01.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<hr>
+<h2 id="&#x65E0;&#x7EBF;&#x901A;&#x4FE1;&#x9891;&#x7387;&#x5206;&#x914D;&#x8868;"><a name="&#x65E0;&#x7EBF;&#x901A;&#x4FE1;&#x9891;&#x7387;&#x5206;&#x914D;&#x8868;" class="anchor-navigation-ex-anchor" href="#&#x65E0;&#x7EBF;&#x901A;&#x4FE1;&#x9891;&#x7387;&#x5206;&#x914D;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x65E0;&#x7EBF;&#x901A;&#x4FE1;&#x9891;&#x7387;&#x5206;&#x914D;&#x8868;</h2>
+<p><strong>&#x5148;&#x770B;&#x770B;&#x65E0;&#x7EBF;&#x7535;&#x4FE1;&#x53F7;&#x7684;&#x9891;&#x8C31;&#x5982;&#x4F55;&#x5212;&#x5206;&#xFF1A;</strong></p>
+<p><img src="images/1.phy_note_07.png" alt="img"></p>
+<p><img src="images/1.phy_note_06.png" alt="&#x65E0;&#x7EBF;&#x7535;&#x9891;&#x6BB5;&#x7684;&#x5212;&#x5206;"></p>
+<h2 id="5g-nr-&#x9891;&#x6BB5;"><a name="5g-nr-&#x9891;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#5g-nr-&#x9891;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. 5G NR &#x9891;&#x6BB5;</h2>
+<p>3GPP&#x5DF2;&#x6307;&#x5B9A;<a href="https://so.csdn.net/so/search?q=5G&amp;spm=1001.2101.3001.7020" target="_blank">5G</a> NR &#x652F;&#x6301;&#x7684;&#x9891;&#x6BB5;&#x5217;&#x8868;&#xFF0C;5G NR&#x9891;&#x8C31;&#x8303;&#x56F4;&#x53EF;&#x8FBE;100GHz&#xFF0C;&#x6307;&#x5B9A;&#x4E86;&#x4E24;&#x5927;&#x9891;&#x7387;&#x8303;&#x56F4;&#xFF1A;</p>
+<p><img src="images/1.phy_note_08.png" alt="img"></p>
+<p><strong>&#x2460;Frequency range 1 &#xFF08;FR1&#xFF09;&#xFF1A;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x8BB2;&#x7684;6GHz&#x4EE5;&#x4E0B;&#x9891;&#x6BB5;</strong></p>
+<p><strong>&#x2022;&#x9891;&#x7387;&#x8303;&#x56F4;</strong>&#xFF1A;<strong>450MHz - 6.0GHz</strong></p>
+<p><strong>&#x2022;&#x6700;&#x5927;&#x4FE1;&#x9053;&#x5E26;&#x5BBD;100MHz</strong></p>
+<p><strong>&#x2461;Frequency range 2 &#xFF08;FR2&#xFF09;&#xFF1A;&#x5C31;&#x662F;&#x6BEB;&#x7C73;&#x6CE2;&#x9891;&#x6BB5;</strong></p>
+<p><strong>&#x2022;&#x9891;&#x7387;&#x8303;&#x56F4;</strong>&#xFF1A;<strong>24.25GHz - 52.6GHz</strong></p>
+<p><strong>&#x2022;&#x6700;&#x5927;&#x4FE1;&#x9053;&#x5E26;&#x5BBD;400MHz</strong></p>
+<p>5G NR&#x652F;&#x6301; 16CC &#x8F7D;&#x6CE2;&#x805A;&#x5408;&#x3002;</p>
+<p>&#x7531;&#x4E8E;5G NR&#x5B9A;&#x4E49;&#x4E86;&#x7075;&#x6D3B;&#x7684;&#x5B50;&#x8F7D;&#x6CE2;&#x95F4;&#x9694;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x5B50;&#x8F7D;&#x6CE2;&#x95F4;&#x9694;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x7684;&#x9891;&#x7387;&#x8303;&#x56F4;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/1.phy_note_09.png" alt="img"></p>
+<p>5G NR&#x9891;&#x6BB5;&#x5206;&#x4E3A;&#xFF1A;FDD&#x3001;TDD&#x3001;SUL&#x548C;SDL&#x3002;SUL&#x548C;SDL&#x4E3A;&#x8F85;&#x52A9;&#x9891;&#x6BB5;&#xFF08;Supplementary Bands&#xFF09;&#xFF0C;&#x5206;&#x522B;&#x4EE3;&#x8868;&#x4E0A;&#x884C;&#x548C;&#x4E0B;&#x884C;&#x3002;</p>
+<p><strong>&#x4E0E;LTE&#x4E0D;&#x540C;&#xFF0C;5G NR&#x9891;&#x6BB5;&#x53F7;&#x6807;&#x8BC6;&#x4EE5;&#x201C;n&#x201D;&#x5F00;&#x5934;&#xFF0C;&#x6BD4;&#x5982;LTE&#x7684;B20&#xFF08;Band 20&#xFF09;&#xFF0C;5G NR&#x79F0;&#x4E3A;n20</strong>&#x3002;</p>
+<p>&#x76EE;&#x524D;3GPP&#x5DF2;&#x6307;&#x5B9A;&#x7684;5G NR&#x9891;&#x6BB5;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><strong>FR1 (450 MHz&#x2013;6000MHz)&#xFF1A;</strong></p>
+<p><img src="images/1.phy_note_10.png" alt="img"></p>
+<p><strong>FR2&#xFF1A;</strong></p>
+<p><img src="images/1.phy_note_11.png" alt="img"></p>
+<p>&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;5G NR&#x5305;&#x542B;&#x4E86;&#x90E8;&#x5206;LTE &#x9891;&#x6BB5;&#xFF0C;&#x4E5F;&#x65B0;&#x589E;&#x4E86;&#x4E00;&#x4E9B;&#x9891;&#x6BB5;&#x3002;&#x76EE;&#x524D;&#xFF0C;&#x5168;&#x7403;&#x6700;&#x6709;&#x53EF;&#x80FD;&#x4F18;&#x5148;&#x90E8;&#x7F72;&#x7684;5G&#x9891;&#x6BB5;&#x4E3A;n77&#x3001;n78&#x3001;n79&#x3001;n257&#x3001;n258&#x548C;n260&#xFF0C;&#x5C31;&#x662F;3.3GHz-4.2GHz&#x3001; 4.4GHz-5.0GHz&#x548C;&#x6BEB;&#x7C73;&#x6CE2;&#x9891;&#x6BB5;26GHz/28GHz/39GHz&#x3002;</p>
+<h2 id="&#x56FD;&#x5185;&#x9891;&#x8C31;&#x5206;&#x914D;&#x60C5;&#x51B5;"><a name="&#x56FD;&#x5185;&#x9891;&#x8C31;&#x5206;&#x914D;&#x60C5;&#x51B5;" class="anchor-navigation-ex-anchor" href="#&#x56FD;&#x5185;&#x9891;&#x8C31;&#x5206;&#x914D;&#x60C5;&#x51B5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x56FD;&#x5185;&#x9891;&#x8C31;&#x5206;&#x914D;&#x60C5;&#x51B5;</h2>
+<p><img src="images/1.phy_note_12.png" alt="img"></p>
+<h2 id="&#x4E09;&#x5927;&#x8FD0;&#x8425;&#x5546;&#x9891;&#x7387;&#x5212;&#x5206;"><a name="&#x4E09;&#x5927;&#x8FD0;&#x8425;&#x5546;&#x9891;&#x7387;&#x5212;&#x5206;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x5927;&#x8FD0;&#x8425;&#x5546;&#x9891;&#x7387;&#x5212;&#x5206;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x4E09;&#x5927;&#x8FD0;&#x8425;&#x5546;&#x9891;&#x7387;&#x5212;&#x5206;</h2>
+<p><img src="images/1.phy_note_13.png" alt="img"></p>
+<p><img src="images/1.phy_note_14.png" alt="img"></p>
+<p>&#x6CE8;&#xFF1A;</p>
+<ul>
+<li>1&#xFF09;&#x9EC4;&#x8272;&#x4FDD;&#x62A4;&#x5E26;&#xFF1A;&#x539F;&#x79FB;&#x52A8;&#x7528;1880-1900&#xFF08;20M&#xFF09;&#xFF0C;&#x7535;&#x4FE1;&#x7528;1860-1875&#xFF08;15M&#xFF09;&#xFF0C;&#x7531;&#x4E8E;TD&#x548C;FDD&#x4E4B;&#x95F4;&#x6709;&#x5E72;&#x6270;&#xFF0C;&#x9700;&#x7559;1875-1880&#x95F4;&#x7684;5M&#x51FA;&#x6765;&#x505A;&#x9694;&#x79BB;&#x5E26;&#x3002;&#x7535;&#x4FE1;&#x628A;&#x5C0F;&#x7075;&#x901A;&#x5360;&#x7528;&#x9891;&#x6BB5;&#xFF08;1900-1920&#xFF09;&#x6E05;&#x51FA;&#x6765;&#x8FD8;&#x7ED9;&#x79FB;&#x52A8;&#x540E;&#xFF0C;&#x79FB;&#x52A8;&#x5C31;&#x62E5;&#x6709;&#x5B8C;&#x6574;&#x7684;&#x4ECE;1880-1920&#x7684;40M&#x9891;&#x6BB5;&#xFF0C;&#x4F46;&#x9694;&#x79BB;&#x5E26;&#x7531;&#x79FB;&#x52A8;&#x4FA7;&#x51FA;1880-1885&#x95F4;&#x7684;5M&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x7535;&#x4FE1;&#x5C31;&#x53EF;&#x4EE5;&#x7528;1860-1880&#x505A;&#x5B8C;&#x6574;&#x7684;20M&#x8F7D;&#x6CE2;&#x3002;&#x79FB;&#x52A8;&#x7528;1885-1920&#x7684;35M&#x3002;</li>
+<li>2&#xFF09;&#x6839;&#x636E;&#x4ECA;&#x5E74;6&#x6708;&#x4EFD;&#x300A;&#x5DE5;&#x4FE1;&#x90E8;&#x540C;&#x610F;&#x5173;&#x4E8E;&#x4E2D;&#x56FD;&#x7535;&#x4FE1;&#x4F7F;&#x7528;800M&#x548C;2100M&#x9891;&#x6BB5;&#x5F00;&#x5C55;LTE&#x7EC4;&#x7F51;&#x7684;&#x6279;&#x590D;&#x300B;&#xFF0C;&#x4E2D;&#x56FD;&#x7535;&#x4FE1;&#x53EF;&#x4EE5;&#x5728;CDMA 1X/DO&#x9891;&#x6BB5;825-835/870&#xFF0D;880&#xFF0C;1920-1940/2110-2130&#x4E0A;&#x91CD;&#x8015;LTE FDD&#x3002;</li>
+<li>3&#xFF09;&#x6839;&#x636E;&#x6700;&#x8FD1;&#x300A;&#x5DE5;&#x4FE1;&#x90E8;&#x540C;&#x610F;&#x5173;&#x4E8E;&#x4E2D;&#x56FD;&#x8054;&#x901A;&#x8C03;&#x6574;&#x90E8;&#x5206;&#x9891;&#x7387;&#x7528;&#x4E8E;LTE&#x7EC4;&#x7F51;&#x7684;&#x6279;&#x590D;&#x300B;&#xFF0C;&#x4E2D;&#x56FD;&#x8054;&#x901A;&#x53EF;&#x4EE5;&#x5728;&#x539F;2G&#x548C;WCDMA&#x9891;&#x6BB5;909-915/954-960&#xFF0C;1735-1750/1830-1845,1940-1965/2130-2155&#x4E0A;&#x91CD;&#x8015;LTE FDD&#x3002;</li>
+</ul>
+<h2 id="reference"><a name="reference" class="anchor-navigation-ex-anchor" href="#reference"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. Reference</h2>
+<ol>
+<li><a href="https://blog.csdn.net/qq_38961780/article/details/120400731" target="_blank">&#x96F7;&#x8FBE;&#x6CE2;&#x6BB5;&#x5212;&#x5206;</a></li>
+<li><a href="https://blog.csdn.net/pengpengjy/article/details/79516780" target="_blank">&#x5173;&#x4E8E;&#x7535;&#x78C1;&#x6CE2;&#x7684;&#x51E0;&#x70B9;&#x5E38;&#x8BC6;</a></li>
+<li><a href="https://blog.csdn.net/qq_41394155/article/details/88556457" target="_blank">&#x65E0;&#x7EBF;&#x901A;&#x4FE1;&#x9891;&#x7387;&#x5206;&#x914D;&#x8868;&#xFF08;&#x542B;&#x6700;&#x65B0;5G NR&#xFF09;</a></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: PHY">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.4G_5G.html" class="navigation navigation-next " aria-label="Next page: 2. 4G&5G专题">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1. 无线电波","level":"1.4.1","depth":2,"next":{"title":"2. 4G&5G专题","level":"1.4.2","depth":2,"path":"PHY/2.4G_5G.md","ref":"PHY/2.4G_5G.md","articles":[]},"previous":{"title":"PHY","level":"1.4","depth":1,"path":"PHY/README.md","ref":"PHY/README.md","articles":[{"title":"1. 无线电波","level":"1.4.1","depth":2,"path":"PHY/1.电磁波.md","ref":"PHY/1.电磁波.md","articles":[]},{"title":"2. 4G&5G专题","level":"1.4.2","depth":2,"path":"PHY/2.4G_5G.md","ref":"PHY/2.4G_5G.md","articles":[]},{"title":"3. 通信原理","level":"1.4.3","depth":2,"path":"PHY/3.通信原理.md","ref":"PHY/3.通信原理.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","prism","ace","copy-code-button","splitter","back-to-top-button","chapter-fold","expandable-chapters-small","favicon","autotheme","advanced-emoji","book-summary-scroll-position-saver","anchor-navigation-ex","emphasize","theme-comscore","multipart"],"ignores":["_book","node_modules"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"emphasize":{},"ace":{},"book-summary-scroll-position-saver":{},"splitter":{},"search-pro":{},"multipart":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"family":"serif","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"/assets/images/favicon.ico","bookmark":"/assets/images/favicon.ico","appleTouch":"/assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"/assets/images/apple-touch-icon-120x120.png","180x180":"/assets/images/apple-touch-icon-180x180.png"}},"theme-comscore":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"autotheme":{"night":[20,21,22,23,0,1,2,3,4,5],"sepia":[6,7,8,18,19,19],"white":[9,10,11,12,13,14,15,16,17]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Mr.Miaow","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"C note","language":"zh-hans","gitbook":"3.x.x","description":"C note"},"file":{"path":"PHY/1.电磁波.md","mtime":"2022-06-09T03:03:35.489Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-08T02:50:36.798Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-autotheme/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

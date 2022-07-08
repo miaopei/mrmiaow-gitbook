@@ -1,0 +1,1054 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2. 状态机模式 · C note</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Mr.Miaow">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3.Chain_of_Responsibility.html" />
+    
+    
+    <link rel="prev" href="1.Overview.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../ORAN/">
+            
+                <a href="../../ORAN/">
+            
+                    
+                    O-RAN
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../ORAN/1.ORAN_Architecture.html">
+            
+                <a href="../../ORAN/1.ORAN_Architecture.html">
+            
+                    
+                    1. O-RAN 总体架构与概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../ORAN/2.ORAN_white_box.html">
+            
+                <a href="../../ORAN/2.ORAN_white_box.html">
+            
+                    
+                    2. O-RAN 白盒化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../ORAN/3.ORAN_OAM_OM.html">
+            
+                <a href="../../ORAN/3.ORAN_OAM_OM.html">
+            
+                    
+                    3. O-RAN OAM操作维护管理架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../ORAN/4.ORAN_RIC.html">
+            
+                <a href="../../ORAN/4.ORAN_RIC.html">
+            
+                    
+                    4. O-RAN 近实时无线接入网智能控制器RIC的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../ORAN/5.ORAN_netconf.html">
+            
+                <a href="../../ORAN/5.ORAN_netconf.html">
+            
+                    
+                    5. O-RAN FrontHaul前传接口的网络配置管理协议netconf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../ORAN/6.ORAN_yang.html">
+            
+                <a href="../../ORAN/6.ORAN_yang.html">
+            
+                    
+                    6. O-RAN FrontHaul前传接口的网络配置管理与Yang数据建模语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../ORAN/7.ORAN_nFAPI.html">
+            
+                <a href="../../ORAN/7.ORAN_nFAPI.html">
+            
+                    
+                    7. nFAPI接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../ORAN/8.ORAN_eCPRI.html">
+            
+                <a href="../../ORAN/8.ORAN_eCPRI.html">
+            
+                    
+                    8. eCPRI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    C/C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../CPlus/">
+            
+                <a href="../CPlus/">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../CPlus/1.cplus_overview-00.html">
+            
+                <a href="../CPlus/1.cplus_overview-00.html">
+            
+                    
+                    C++ 思维导图-01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../CPlus/2.cplus_overview-01.html">
+            
+                <a href="../CPlus/2.cplus_overview-01.html">
+            
+                    
+                    C++ 思维导图-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../CPlus/3.cplus_overview-02.html">
+            
+                <a href="../CPlus/3.cplus_overview-02.html">
+            
+                    
+                    C++ 思维导图-03
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../CSkillSummary/">
+            
+                <a href="../CSkillSummary/">
+            
+                    
+                    C技巧汇总
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../CSkillSummary/1.IPC.html">
+            
+                <a href="../CSkillSummary/1.IPC.html">
+            
+                    
+                    1. 进程间通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    C设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="1.Overview.html">
+            
+                <a href="1.Overview.html">
+            
+                    
+                    1. 概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.2" data-path="2.StateMechine.html">
+            
+                <a href="2.StateMechine.html">
+            
+                    
+                    2. 状态机模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="3.Chain_of_Responsibility.html">
+            
+                <a href="3.Chain_of_Responsibility.html">
+            
+                    
+                    3. 责任链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="4.Observer.html">
+            
+                <a href="4.Observer.html">
+            
+                    
+                    4. 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="5.Command.html">
+            
+                <a href="5.Command.html">
+            
+                    
+                    5. 命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="6.Adapter.html">
+            
+                <a href="6.Adapter.html">
+            
+                    
+                    6. 适配及系列模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="7.Builder.html">
+            
+                <a href="7.Builder.html">
+            
+                    
+                    7. 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="8.Facade.html">
+            
+                <a href="8.Facade.html">
+            
+                    
+                    8. 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="9.Visitor.html">
+            
+                <a href="9.Visitor.html">
+            
+                    
+                    9. 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="10.Atypical.html">
+            
+                <a href="10.Atypical.html">
+            
+                    
+                    10. 非典型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../CMemory/">
+            
+                <a href="../CMemory/">
+            
+                    
+                    C内存-运行机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../PHY/">
+            
+                <a href="../../PHY/">
+            
+                    
+                    PHY
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../PHY/1.电磁波.html">
+            
+                <a href="../../PHY/1.电磁波.html">
+            
+                    
+                    1. 无线电波
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../PHY/2.4G_5G.html">
+            
+                <a href="../../PHY/2.4G_5G.html">
+            
+                    
+                    2. 4G&5G专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../PHY/3.通信原理.html">
+            
+                <a href="../../PHY/3.通信原理.html">
+            
+                    
+                    3. 通信原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../Python/">
+            
+                <a href="../../Python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../Vim/">
+            
+                <a href="../../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../Vim/1.VimNote.html">
+            
+                <a href="../../Vim/1.VimNote.html">
+            
+                    
+                    1. vimplus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../Vim/2.vimHotKey.html">
+            
+                <a href="../../Vim/2.vimHotKey.html">
+            
+                    
+                    2. vim 快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >2. 状态机模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;"><b>1. </b>&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;"><b>1.1. </b>&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;"><b>1.2. </b>&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;</a></li><ul><li><span class="title-icon "></span><a href="#&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;1"><b>1.2.1. </b>&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;1</a></li><li><span class="title-icon "></span><a href="#&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;2"><b>1.2.2. </b>&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;2</a></li><li><span class="title-icon "></span><a href="#&#x7B80;&#x5355;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><b>1.2.3. </b>&#x7B80;&#x5355;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;</a></li><li><span class="title-icon "></span><a href="#&#x666E;&#x901A;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><b>1.2.4. </b>&#x666E;&#x901A;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;</a></li><li><span class="title-icon "></span><a href="#&#x590D;&#x6742;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><b>1.2.5. </b>&#x590D;&#x6742;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x603B;&#x7ED3;"><b>1.3. </b>&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x603B;&#x7ED3;</a></li></ul></ul></div><a href="#&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;"><a name="&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;</h1>
+<blockquote>
+<p>&#x3010;&#x6458;&#x8981;&#x3011; &#x72B6;&#x6001;&#xFF08;state&#xFF09;&#x6A21;&#x5F0F;&#x662F;C&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x76F8;&#x5F53;&#x5E38;&#x7528;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x662F;&#x80FD;&#x591F;&#x5728;C&#x8BED;&#x8A00;&#x4E0B; &#x4F53;&#x73B0;&#x51FA;&#x6765;&#x7684;&#x6700;&#x663E;&#x6027;&#x7684;&#x6A21;&#x5F0F;&#x4E4B;&#x4E00;&#x3002;&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x91CC;&#xFF0C;&#x72B6;&#x6001;&#x6A21;&#x5F0F;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#x6539;&#x53D8;&#x5176;&#x884C;&#x4E3A;&#x3002;</p>
+</blockquote>
+<h2 id="&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;"><a name="&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;</h2>
+<p>&#x72B6;&#x6001;&#xFF08;state&#xFF09;&#x6A21;&#x5F0F;&#x662F;C&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x76F8;&#x5F53;&#x5E38;&#x7528;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x662F;&#x80FD;&#x591F;&#x5728;C&#x8BED;&#x8A00;&#x73B0;&#x51FA;&#x6765;&#x7684;&#x6700;&#x663E;&#x6027;&#x7684;&#x6A21;&#x5F0F;&#x4E4B;&#x4E00;&#x3002;&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x91CC;&#xFF0C;&#x72B6;&#x6001;&#x6A21;&#x5F0F;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#x6539;&#x53D8;&#x5176;&#x884C;&#x4E3A;&#x3002;</p>
+<p>&#x72B6;&#x6001;&#x7528;&#x6CD5;&#x5F88;&#x591A;&#xFF0C;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x662F;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x5206;&#x4E3A;&#x65E0;&#x9650;&#x72B6;&#x6001;&#x673A;&#x548C;&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;&#x3002;</p>
+<p>&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A; <code>finite-state machine&#xFF0C; FSM</code>&#xFF0C; &#x8F93;&#x5165;&#x96C6;&#x5408;&#x548C;&#x8F93;&#x51FA;&#x96C6;&#x5408;&#x90FD;&#x662F;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x5E76;&#x53EA;&#x6709;&#x6709;&#x9650;&#x6570;&#x76EE;&#x7684;&#x72B6;&#x6001;&#x3002; &#x4E00;&#x822C;&#x8BF4;&#x5230;&#x72B6;&#x6001;&#x673A;&#x5373;&#x662F;&#x5BF9;&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;&#x7684;&#x7B80;&#x79F0;&#x3002;</p>
+<p>&#x65E0;&#x9650;&#x72B6;&#x6001;&#x673A; <code>infinite-state machine&#xFF0C;ISM</code> &#xFF0C;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x96C6;&#x5408;&#x65E0;&#x7EBF;&#xFF0C;&#x72B6;&#x6001;&#x6570;&#x76EE;&#x65E0;&#x9650;&#x7684;&#x72B6;&#x6001;&#x673A;&#x3002;</p>
+<p>&#x5728;C&#x8BED;&#x8A00;&#x91CC;&#xFF0C;&#x72B6;&#x6001;&#x6A21;&#x5F0F;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x4E00;&#x79CD;&#x7ECF;&#x5178;&#x7528;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;&#xFF08;FSM&#xFF09;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x5F0F;&#x6781;&#x4E3A;&#x7A81;&#x51FA;&#x660E;&#x663E;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x90FD;&#x80FD;&#x76F4;&#x63A5;&#x7167;&#x642C;&#x6846;&#x67B6;&#x3002;</p>
+<p>&#x72B6;&#x6001;&#x673A;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x662F;&#x5B9E;&#x73B0;&#x534F;&#x8BAE;&#x3002;&#x901A;&#x5E38;&#x534F;&#x8BAE;&#x4F1A;&#x6709;&#x51E0;&#x4E2A;&#x6838;&#x5FC3;&#x72B6;&#x6001;&#x673A;&#x63CF;&#x8FF0;&#x3002;</p>
+<h2 id="&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;"><a name="&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;" class="anchor-navigation-ex-anchor" href="#&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;</h2>
+<h3 id="&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;1"><a name="&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;1" class="anchor-navigation-ex-anchor" href="#&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;1"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;1</h3>
+<p>&#x6709;&#x4E00;&#x4E2A;&#x706F;&#xFF0C;&#x6309;&#x4E0B;&#x5F00;&#x6309;&#x94AE;&#xFF0C;&#x5C31;&#x4F1A;&#x5F00;&#x706F;&#xFF0C;&#x6309;&#x4E0B;&#x5173;&#x6309;&#x94AE;&#x5C31;&#x4F1A;&#x5173;&#x706F;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5178;&#x578B;&#x7684;&#x7B80;&#x5355;&#x7684;&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;&#x3002;&#x7B80;&#x5355;&#x7684;&#x63CF;&#x8FF0;&#x6709;2&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x5173;&#x706F;<code>[STATE_OFF]</code>&#xFF0C;&#x4EAE; <code>[STATE_LIGHT_ON]</code> &#x3002;&#x6709;&#x4E24;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x5F00;&#x548C;&#x5173;&#x6309;&#x94AE;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x4E8B;&#x4EF6;&#x4FC3;&#x4F7F;&#x72B6;&#x6001;&#x673A;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x3002;</p>
+<p><img src="images/1510127501852086.png" alt="image.png"></p>
+<h3 id="&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;2"><a name="&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;2" class="anchor-navigation-ex-anchor" href="#&#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;2"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. &#x72B6;&#x6001;&#x673A;&#x793A;&#x4F8B;2</h3>
+<p>&#x6709;&#x4E00;&#x4E2A;&#x706F;&#xFF0C;&#x6309;&#x4E0B;&#x5F00;&#x6309;&#x94AE;&#xFF0C;&#x5C31;&#x4F1A;&#x5F00;&#x706F;&#xFF0C;&#x6309;&#x4E0B;&#x5173;&#x6309;&#x94AE;&#x5C31;&#x4F1A;&#x5173;&#x706F;&#x3002;&#x548C;&#x4E00;&#x822C;&#x7B49;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x4E24;&#x6B21;&#x5F00;&#x4E4B;&#x95F4;&#x7684;&#x706F;&#x7684;&#x660E;&#x6697;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x5F00;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x9AD8;&#x4EAE;&#xFF0C;&#x5173;&#x706F;&#x540E;&#xFF0C;&#x518D;&#x5F00;&#x662F;&#x4F4E;&#x4EAE;&#xFF0C;&#x4E0B;&#x6B21;&#x518D;&#x5F00;&#x662F;&#x9AD8;&#x4EAE;&#xFF0C;&#x5FAA;&#x73AF;&#x5F80;&#x590D;&#x3002;</p>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5178;&#x578B;&#x7684;&#x7B80;&#x5355;&#x7684;&#x6709;&#x9650;&#x72B6;&#x6001;&#x673A;&#x3002;&#x7B80;&#x5355;&#x7684;&#x63CF;&#x8FF0;&#x6709;3&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x5173;&#x706F; <code>[STATE_OFF]</code>&#xFF0C;&#x9AD8;&#x4EAE;<code>[STATE_HIGH_LIGHT]</code>&#xFF0C;&#x4F4E;&#x4EAE; <code>[STATE_LOW_LIGHT]</code>&#x3002;</p>
+<p><img src="images/1510127517296469.png" alt="image.png"></p>
+<h3 id="&#x7B80;&#x5355;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><a name="&#x7B80;&#x5355;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x7B80;&#x5355;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.3. &#x7B80;&#x5355;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;</h3>
+<p>&#x4EE5;&#x72B6;&#x6001;&#x673A;&#x793A; <code>&#x4F8B;1</code> &#x4E3A;&#x76EE;&#x6807;&#xFF0C;&#x5982;&#x679C;&#x7528; <code>if/switch/case</code> &#x6765;&#xFF0C;&#x5C31;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x8BBE;&#x8BA1;&#x548C;&#x6A21;&#x5F0F;&#x7684;&#x610F;&#x4E49;&#xFF0C;&#x90A3;&#x53EA;&#x662F;&#x6700;&#x666E;&#x901A;&#x7684;&#x6D41;&#x7A0B;&#x5F00;&#x53D1;&#x6280;&#x80FD;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x7B80;&#x5355;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x8F6C;&#x79FB;&#x6761;&#x4EF6;&#x5355;&#x4E00;&#xFF0C;&#x5BF9;&#x7ED3;&#x679C;&#x5F88;&#x786E;&#x5B9A;&#x7684;&#x72B6;&#x6001;&#x673A;&#x3002;</p>
+<pre class="language-"><code class="lang-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">STATE_OFF</span>  <span class="token expression"><span class="token number">0</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">STATE_LIGHT_ON</span> <span class="token expression"><span class="token number">1</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">STATE_MAX</span>  <span class="token expression"><span class="token number">2</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">EVETN_BTN_OFF</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">EVETN_BTN_ON</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">EVETN_MAX</span></span>
+
+<span class="token keyword">int</span> light_fsm_simple_table<span class="token punctuation">[</span>STATE_MAX<span class="token punctuation">]</span><span class="token punctuation">[</span>EVETN_MAX<span class="token punctuation">]</span> <span class="token operator">=</span>
+<span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>STATE_OFF<span class="token punctuation">]</span><span class="token punctuation">[</span>EVETN_BTN_OFF<span class="token punctuation">]</span> <span class="token operator">=</span> STATE_OFF<span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>STATE_OFF<span class="token punctuation">]</span><span class="token punctuation">[</span>EVETN_BTN_ON<span class="token punctuation">]</span> <span class="token operator">=</span> STATE_LIGHT_ON<span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>STATE_LIGHT_ON<span class="token punctuation">]</span><span class="token punctuation">[</span>EVETN_BTN_OFF<span class="token punctuation">]</span> <span class="token operator">=</span> STATE_OFF<span class="token punctuation">,</span>
+    <span class="token punctuation">[</span>STATE_LIGHT_ON<span class="token punctuation">]</span><span class="token punctuation">[</span>EVETN_BTN_ON<span class="token punctuation">]</span> <span class="token operator">=</span> STATE_LIGHT_ON
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">light_fsm_event</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur_stat<span class="token punctuation">,</span> <span class="token keyword">int</span> event<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> next_state<span class="token punctuation">;</span>
+    next_state <span class="token operator">=</span> light_fsm_simple_table<span class="token punctuation">[</span>cur_stat<span class="token punctuation">]</span><span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> next_state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> light_state <span class="token operator">=</span> STATE_OFF<span class="token punctuation">;</span> 
+    <span class="token keyword">int</span> eve1 <span class="token operator">=</span> EVETN_BTN_OFF<span class="token punctuation">;</span> 
+    <span class="token keyword">int</span> eve2 <span class="token operator">=</span> EVETN_BTN_ON<span class="token punctuation">;</span>
+
+    light_state <span class="token operator">=</span> <span class="token function">light_fsm_event</span><span class="token punctuation">(</span>light_state<span class="token punctuation">,</span> eve1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;now light state is %d\n&quot;</span><span class="token punctuation">,</span> light_state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    light_state <span class="token operator">=</span> <span class="token function">light_fsm_event</span><span class="token punctuation">(</span>light_state<span class="token punctuation">,</span> eve2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;now light state is %d\n&quot;</span><span class="token punctuation">,</span> light_state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x6709;&#x51E0;&#x4E2A;&#x8981;&#x70B9;</p>
+<ol>
+<li><p>&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x6570;&#x7EC4;&#x3002;&#x7531;&#x4E8E;&#x7B80;&#x5355;&#x6A21;&#x5F0F;&#x67D0;&#x79CD;&#x72B6;&#x6001;&#x4E0B;&#x53D1;&#x751F;&#x67D0;&#x4E8B;&#x4EF6;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6570;&#x7EC4;&#x7684;&#x503C;&#x5C31;&#x662F;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x3002;</p>
+</li>
+<li><p>&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x5904;&#x7406;&#x7684;&#x5C01;&#x88C5;&#x51FD;&#x6570; <code>light_fsm_event</code>&#x3002;&#x91CC;&#x9762;&#x9664;&#x4E86;&#x8F6C;&#x79FB;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x6269;&#x5C55;&#x5904;&#x7406;&#x3002;&#x4E0D;&#x7136;&#x7B80;&#x5355;&#x6A21;&#x5F0F;&#x5E94;&#x7528;&#x5C31;&#x5F88;&#x5C40;&#x9650;&#x3002;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x5728; <code>light_fsm_event</code> &#x91CC;&#x9762;&#x52A0;&#x5165;</p>
+</li>
+</ol>
+<pre class="language-"><code class="lang-c"><span class="token keyword">if</span><span class="token punctuation">(</span>next_state <span class="token operator">==</span> STATE_LIGHT_ON<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;light is on&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x666E;&#x901A;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><a name="&#x666E;&#x901A;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x666E;&#x901A;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.4. &#x666E;&#x901A;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;</h3>
+<p>&#x5927;&#x578B;&#x4E00;&#x70B9;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x6BD4;&#x5982;&#x590D;&#x6742;&#x534F;&#x8BAE;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#xFF0C;&#x65E0;&#x6CD5;&#x7528;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x548C;&#x4E8B;&#x4EF6;&#x7B80;&#x5355;&#x786E;&#x5B9A;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x9700;&#x8981;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E86;&#x72B6;&#x6001;&#x673A; <code>&#x793A;&#x4F8B;&#x4E8C;</code>&#xFF0C;&#x4E3A;&#x6837;&#x4F8B;&#x4EE3;&#x7801;&#xFF0C;&#x672A;&#x8FD0;&#x884C;&#x5B9E;&#x9A8C;&#x8FC7;&#x3002;</p>
+<pre class="language-"><code class="lang-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">STATE_DEPEND</span>     <span class="token expression"><span class="token number">4</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">STATE_OFF</span>       <span class="token expression"><span class="token number">0</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">STATE_HIGH_LIGHT</span>      <span class="token expression"><span class="token number">1</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">STATE_LOW_LIGHT</span>      <span class="token expression"><span class="token number">2</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">STATE_MAX</span>       <span class="token expression"><span class="token number">3</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">EVETN_BTN_OFF</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">EVETN_BTN_ON</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">EVETN_MAX</span></span>
+
+<span class="token keyword">int</span> last_state <span class="token operator">=</span> STATE_LOW_LIGHT<span class="token punctuation">;</span>
+<span class="token keyword">int</span> last_light_state <span class="token operator">=</span> STATE_LOW_LIGHT<span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>func<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> next_state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> light_fsm <span class="token punctuation">[</span>STATE_MAX<span class="token punctuation">]</span><span class="token punctuation">[</span>EVETN_MAX<span class="token punctuation">]</span> <span class="token operator">=</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//STATE_OFF</span>
+    <span class="token punctuation">{</span>
+        <span class="token punctuation">{</span> lfsm_ignore<span class="token punctuation">,</span> STATE_MAX <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">/*EVETN_BTN_OFF*/</span>
+        <span class="token punctuation">{</span> lfsm_btn_on<span class="token punctuation">,</span> STATE_DEPEND <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">/*EVETN_BTN_ON*/</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//STATE_HIGH_LIGHT</span>
+    <span class="token punctuation">{</span>
+        <span class="token punctuation">{</span> lfsm_btn_off<span class="token punctuation">,</span> STATE_OFF <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">/*EVETN_BTN_OFF*/</span>
+        <span class="token punctuation">{</span> lfsm_ignore<span class="token punctuation">,</span> STATE_MAX <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">/*EVETN_BTN_ON*/</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//STATE_LOW_LIGHT</span>
+    <span class="token punctuation">{</span>
+        <span class="token punctuation">{</span> lfsm_btn_off<span class="token punctuation">,</span> STATE_OFF <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">/*EVETN_BTN_OFF*/</span>
+        <span class="token punctuation">{</span> lfsm_ignore<span class="token punctuation">,</span> STATE_MAX <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">/*EVETN_BTN_ON*/</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">lfsm_ignore</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur_stat<span class="token punctuation">,</span> <span class="token keyword">int</span> event<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;invalid state or event\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">lfsm_btn_on</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur_stat<span class="token punctuation">,</span> <span class="token keyword">int</span> event<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>last_light_state <span class="token operator">==</span> STATE_HIGH_LIGHT<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> STATE_LOW_LIGHT<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>last_light_state <span class="token operator">==</span> STATE_LOW_LIGHT<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> STATE_HIGH_LIGHT<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;invalid state\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> STATE_MAX<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">lfsm_btn_off</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur_stat<span class="token punctuation">,</span> <span class="token keyword">int</span> event<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    last_light_state <span class="token operator">=</span> cur_stat<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">light_change_state</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur_stat<span class="token punctuation">,</span> <span class="token keyword">int</span> next_state<span class="token punctuation">,</span><span class="token keyword">int</span> event<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//if light on has special handling</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>next_state <span class="token operator">=</span> STATE_HIGH_LIGHT<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;rejoice, now bright light\n&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//other state change related handlings, maybe use current state and next state, or event type  </span>
+    last_state <span class="token operator">=</span> cur_stat<span class="token punctuation">;</span>
+    cur_stat <span class="token operator">=</span> next_state<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">light_event_happen</span><span class="token punctuation">(</span><span class="token keyword">int</span> event<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//if light on has special handling</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>event <span class="token operator">=</span> EVETN_BTN_OFF<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;someone turn off light\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//other event type related handlings</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">light_fsm_event</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur_stat<span class="token punctuation">,</span> <span class="token keyword">int</span> event<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> next_state<span class="token punctuation">,</span> next_state_tmp<span class="token punctuation">;</span>
+
+    next_state_tmp <span class="token operator">=</span> <span class="token operator">*</span><span class="token punctuation">(</span>light_fsm<span class="token punctuation">[</span>cur_stat<span class="token punctuation">]</span><span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">.</span>func<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>next_state_tmp <span class="token operator">==</span> STATE_MAX<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;fsm error\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>light_fsm<span class="token punctuation">[</span>cur_stat<span class="token punctuation">]</span><span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">.</span>next_state <span class="token operator">==</span> STATE_DEPEND<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        next_state <span class="token operator">=</span> next_state_tmp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        next_state <span class="token operator">=</span> light_fsm<span class="token punctuation">[</span>cur_stat<span class="token punctuation">]</span><span class="token punctuation">[</span>event<span class="token punctuation">]</span><span class="token punctuation">.</span>next_state<span class="token punctuation">;</span>       
+    <span class="token punctuation">}</span>
+
+    <span class="token function">light_change_state</span><span class="token punctuation">(</span>next_state<span class="token punctuation">,</span> cur_stat<span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">light_event_happen</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> light_state <span class="token operator">=</span> STATE_OFF<span class="token punctuation">;</span>  
+
+    <span class="token function">light_fsm_event</span><span class="token punctuation">(</span>light_state<span class="token punctuation">,</span> EVETN_BTN_OFF<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">light_fsm_event</span><span class="token punctuation">(</span>light_state<span class="token punctuation">,</span> EVETN_BTN_ON<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">light_fsm_event</span><span class="token punctuation">(</span>light_state<span class="token punctuation">,</span> EVETN_BTN_OFF<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">light_fsm_event</span><span class="token punctuation">(</span>light_state<span class="token punctuation">,</span> EVETN_BTN_ON<span class="token punctuation">)</span><span class="token punctuation">;</span>   
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x666E;&#x901A;&#x6A21;&#x5F0F;&#x7684;&#x72B6;&#x6001;&#x673A;&#x7684;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x70B9;</p>
+<ol>
+<li><p>&#x72B6;&#x6001;&#x673A;&#x6570;&#x7EC4;&#x7531;&#x72B6;&#x6001;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570; + &#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x6570;&#x7EC4;&#x4EE3;&#x66FF;&#x7B80;&#x5355;&#x6A21;&#x5F0F;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x6570;&#x7EC4;</p>
+</li>
+<li><p>&#x7531;&#x4E8E;&#x5728;&#x7279;&#x5B9A;&#x6A21;&#x5F0F;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#xFF0C;&#x6709;&#x7684;&#x60C5;&#x51B5;&#x4E0D;&#x80FD;&#x786E;&#x5B9A;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x8DF3;&#x8F6C;&#xFF0C;&#x6709;&#x7684;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x3002;&#x6240;&#x4EE5;&#x4E0B;&#x4E00;&#x72B6;&#x6001;&#x6709;&#x4E2A;&#x7279;&#x6B8A;&#x503C;&#x4E3A; <code>STATE_DEPEND</code>&#x3002;&#x5982;&#x679C;&#x9047;&#x5230;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x5C31;&#x4ECE;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x51FD;&#x6570;&#x91CC;&#x83B7;&#x5F97;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x3002;&#x5426;&#x5219;&#x6309;&#x7167;&#x72B6;&#x6001;&#x673A;&#x6570;&#x7EC4;&#x8BBE;&#x5B9A;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+</li>
+<li><p>&#x8BBE;&#x5B9A;&#x4E00;&#x4E2A;&#x72B6;&#x6001; <code>STATE_MAX</code> &#x7528;&#x6765;&#x8868;&#x793A;&#x9519;&#x8BEF;&#x4E8B;&#x4EF6;&#xFF0C;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A; <code>lfsm_ignore</code> &#x51FD;&#x6570;&#x6765;&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;&#x6BD4;&#x5982;&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;&#x8BBE;&#x5B9A; <code>EVETN_BTN_ON</code> &#x4E0D;&#x53EF;&#x80FD;&#x5728;&#x5F00;&#x706F;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x751F;&#x3002;</p>
+</li>
+<li><p>&#x72B6;&#x6001;&#x673A;&#x91CC;&#x9664;&#x4E86;&#x72B6;&#x6001;&#x673A;&#x6570;&#x5B57;&#x51FD;&#x6570;&#x6267;&#x884C;&#xFF0C;&#x6709;&#x4E24;&#x7C7B;&#x901A;&#x7528;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4E0D;&#x53C2;&#x4E0E;&#x4E3B;&#x8981;&#x7684;&#x72B6;&#x6001;&#x673A;&#x8FD0;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x72B6;&#x6001;&#x673A;&#x6709;&#x5F71;&#x54CD;&#x3002;&#x4E00;&#x7C7B;&#x548C;&#x7279;&#x5B9A;&#x7684;&#x72B6;&#x6001;&#x6216;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x6709;&#x5173;&#xFF0C;&#x53E6;&#x5916;&#x4E00;&#x7C7B;&#x662F;&#x548C;&#x7279;&#x5B9A;&#x7684;&#x4E8B;&#x4EF6;&#x6709;&#x5173;&#x3002;&#x5728;&#x6837;&#x4F8B;&#x4EE3;&#x7801;&#x91CC;&#x5206;&#x522B;&#x4EE5; <code>light_change_state</code> &#x548C; <code>light_event_happen</code> &#x6765;&#x8868;&#x793A;&#x3002;</p>
+</li>
+<li><p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x548C;&#x4E0A;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x3002;</p>
+</li>
+</ol>
+<p>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x72B6;&#x6001;&#x673A;&#x901A;&#x5E38;&#x662F;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7684;&#x62BD;&#x8C61;&#x7236;&#x7C7B;&#xFF0C;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x6709;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#x548C;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;C&#x8BED;&#x8A00;&#x91CC;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x8868;&#x7684;&#x51FD;&#x6570;&#x6307;&#x9488;&#x662F;&#x901A;&#x8FC7;&#x72B6;&#x6001;&#x5B50;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x3002;&#x5176;&#x4ED6;&#x7684;&#x5199;&#x6CD5;&#x601D;&#x8DEF;&#x6BD4;&#x8F83;&#x63A5;&#x8FD1;&#x3002;</p>
+<h3 id="&#x590D;&#x6742;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><a name="&#x590D;&#x6742;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x590D;&#x6742;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.5. &#x590D;&#x6742;&#x72B6;&#x6001;&#x673A;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;</h3>
+<p>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x590D;&#x6742;&#x72B6;&#x6001;&#x673A;&#x662F;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x3002;&#x6BD4;&#x5982; <code>OSPF</code>&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x89C1;&#x6211;&#x5199;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x7BC7;&#x6587;&#x7AE0; ZEBRA&#x4E2D;FSM&#x7F16;&#x5199;&#x603B;&#x7ED3;.doc</p>
+<h2 id="&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x603B;&#x7ED3;"><a name="&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x603B;&#x7ED3;</h2>
+<ol>
+<li><p>&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x91CC;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x4F7F;&#x7528;&#x4E3A;&#x666E;&#x901A;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x4F7F;&#x7528;&#x7684;&#x590D;&#x6742;&#x72B6;&#x6001;&#x673A;&#x4E5F;&#x662F;&#x5728;&#x666E;&#x901A;&#x72B6;&#x6001;&#x673A;&#x4E0A;&#x6DFB;&#x52A0;&#x4E00;&#x4E9B;&#x7279;&#x6027;&#x800C;&#x6765;&#xFF0C;&#x57FA;&#x672C;&#x7279;&#x5F81;&#x662F;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x7684;&#x3002;</p>
+</li>
+<li><p>C&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x72B6;&#x6001;&#x673A;&#x7684;&#x6A21;&#x5F0F;&#x662F;&#x975E;&#x5E38;&#x56FA;&#x5B9A;&#x7684;&#x3002;<strong>&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x8868;&#x548C;&#x6838;&#x5FC3;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x51FD;&#x6570;&#x662F;&#x6838;&#x5FC3;</strong>&#x3002;&#x666E;&#x901A;&#x72B6;&#x6001;&#x673A;&#x7684;&#x51E0;&#x4E2A;&#x8981;&#x7D20;&#xFF0C;&#x4E0D;&#x7BA1;&#x5728;&#x521D;&#x59CB;&#x8BBE;&#x8BA1;&#x4E2D;&#x6709;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x5230;&#xFF0C;&#x5EFA;&#x8BAE;&#x90FD;&#x5199;&#x4E0A;&#x3002;</p>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.Overview.html" class="navigation navigation-prev " aria-label="Previous page: 1. 概览">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3.Chain_of_Responsibility.html" class="navigation navigation-next " aria-label="Next page: 3. 责任链模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2. 状态机模式","level":"1.3.3.2","depth":3,"next":{"title":"3. 责任链模式","level":"1.3.3.3","depth":3,"path":"CcodeSummary/CDesignMode/3.Chain_of_Responsibility.md","ref":"CcodeSummary/CDesignMode/3.Chain_of_Responsibility.md","articles":[]},"previous":{"title":"1. 概览","level":"1.3.3.1","depth":3,"path":"CcodeSummary/CDesignMode/1.Overview.md","ref":"CcodeSummary/CDesignMode/1.Overview.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","prism","ace","copy-code-button","splitter","back-to-top-button","chapter-fold","expandable-chapters-small","favicon","autotheme","advanced-emoji","book-summary-scroll-position-saver","anchor-navigation-ex","emphasize","theme-comscore","multipart"],"ignores":["_book","node_modules"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"emphasize":{},"ace":{},"book-summary-scroll-position-saver":{},"splitter":{},"search-pro":{},"multipart":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"family":"serif","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"/assets/images/favicon.ico","bookmark":"/assets/images/favicon.ico","appleTouch":"/assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"/assets/images/apple-touch-icon-120x120.png","180x180":"/assets/images/apple-touch-icon-180x180.png"}},"theme-comscore":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"autotheme":{"night":[20,21,22,23,0,1,2,3,4,5],"sepia":[6,7,8,18,19,19],"white":[9,10,11,12,13,14,15,16,17]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Mr.Miaow","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"C note","language":"zh-hans","gitbook":"3.x.x","description":"C note"},"file":{"path":"CcodeSummary/CDesignMode/2.StateMechine.md","mtime":"2022-05-11T02:20:24.819Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-08T02:50:36.798Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-autotheme/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1149 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5. O-RAN FrontHaul前传接口的网络配置管理协议netconf · C note</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Mr.Miaow">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="6.ORAN_yang.html" />
+    
+    
+    <link rel="prev" href="4.ORAN_RIC.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    O-RAN
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.ORAN_Architecture.html">
+            
+                <a href="1.ORAN_Architecture.html">
+            
+                    
+                    1. O-RAN 总体架构与概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="2.ORAN_white_box.html">
+            
+                <a href="2.ORAN_white_box.html">
+            
+                    
+                    2. O-RAN 白盒化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="3.ORAN_OAM_OM.html">
+            
+                <a href="3.ORAN_OAM_OM.html">
+            
+                    
+                    3. O-RAN OAM操作维护管理架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="4.ORAN_RIC.html">
+            
+                <a href="4.ORAN_RIC.html">
+            
+                    
+                    4. O-RAN 近实时无线接入网智能控制器RIC的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="5.ORAN_netconf.html">
+            
+                <a href="5.ORAN_netconf.html">
+            
+                    
+                    5. O-RAN FrontHaul前传接口的网络配置管理协议netconf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="6.ORAN_yang.html">
+            
+                <a href="6.ORAN_yang.html">
+            
+                    
+                    6. O-RAN FrontHaul前传接口的网络配置管理与Yang数据建模语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="7.ORAN_nFAPI.html">
+            
+                <a href="7.ORAN_nFAPI.html">
+            
+                    
+                    7. nFAPI接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="8.ORAN_eCPRI.html">
+            
+                <a href="8.ORAN_eCPRI.html">
+            
+                    
+                    8. eCPRI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../CcodeSummary/">
+            
+                <a href="../CcodeSummary/">
+            
+                    
+                    C/C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../CcodeSummary/CPlus/">
+            
+                <a href="../CcodeSummary/CPlus/">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../CcodeSummary/CPlus/1.cplus_overview-00.html">
+            
+                <a href="../CcodeSummary/CPlus/1.cplus_overview-00.html">
+            
+                    
+                    C++ 思维导图-01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../CcodeSummary/CPlus/2.cplus_overview-01.html">
+            
+                <a href="../CcodeSummary/CPlus/2.cplus_overview-01.html">
+            
+                    
+                    C++ 思维导图-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../CcodeSummary/CPlus/3.cplus_overview-02.html">
+            
+                <a href="../CcodeSummary/CPlus/3.cplus_overview-02.html">
+            
+                    
+                    C++ 思维导图-03
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../CcodeSummary/CSkillSummary/">
+            
+                <a href="../CcodeSummary/CSkillSummary/">
+            
+                    
+                    C技巧汇总
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../CcodeSummary/CSkillSummary/1.IPC.html">
+            
+                <a href="../CcodeSummary/CSkillSummary/1.IPC.html">
+            
+                    
+                    1. 进程间通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../CcodeSummary/CDesignMode/">
+            
+                <a href="../CcodeSummary/CDesignMode/">
+            
+                    
+                    C设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../CcodeSummary/CDesignMode/1.Overview.html">
+            
+                <a href="../CcodeSummary/CDesignMode/1.Overview.html">
+            
+                    
+                    1. 概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../CcodeSummary/CDesignMode/2.StateMechine.html">
+            
+                <a href="../CcodeSummary/CDesignMode/2.StateMechine.html">
+            
+                    
+                    2. 状态机模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../CcodeSummary/CDesignMode/3.Chain_of_Responsibility.html">
+            
+                <a href="../CcodeSummary/CDesignMode/3.Chain_of_Responsibility.html">
+            
+                    
+                    3. 责任链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../CcodeSummary/CDesignMode/4.Observer.html">
+            
+                <a href="../CcodeSummary/CDesignMode/4.Observer.html">
+            
+                    
+                    4. 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../CcodeSummary/CDesignMode/5.Command.html">
+            
+                <a href="../CcodeSummary/CDesignMode/5.Command.html">
+            
+                    
+                    5. 命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../CcodeSummary/CDesignMode/6.Adapter.html">
+            
+                <a href="../CcodeSummary/CDesignMode/6.Adapter.html">
+            
+                    
+                    6. 适配及系列模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../CcodeSummary/CDesignMode/7.Builder.html">
+            
+                <a href="../CcodeSummary/CDesignMode/7.Builder.html">
+            
+                    
+                    7. 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../CcodeSummary/CDesignMode/8.Facade.html">
+            
+                <a href="../CcodeSummary/CDesignMode/8.Facade.html">
+            
+                    
+                    8. 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../CcodeSummary/CDesignMode/9.Visitor.html">
+            
+                <a href="../CcodeSummary/CDesignMode/9.Visitor.html">
+            
+                    
+                    9. 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../CcodeSummary/CDesignMode/10.Atypical.html">
+            
+                <a href="../CcodeSummary/CDesignMode/10.Atypical.html">
+            
+                    
+                    10. 非典型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../CcodeSummary/CMemory/">
+            
+                <a href="../CcodeSummary/CMemory/">
+            
+                    
+                    C内存-运行机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../PHY/">
+            
+                <a href="../PHY/">
+            
+                    
+                    PHY
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../PHY/1.电磁波.html">
+            
+                <a href="../PHY/1.电磁波.html">
+            
+                    
+                    1. 无线电波
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../PHY/2.4G_5G.html">
+            
+                <a href="../PHY/2.4G_5G.html">
+            
+                    
+                    2. 4G&5G专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../PHY/3.通信原理.html">
+            
+                <a href="../PHY/3.通信原理.html">
+            
+                    
+                    3. 通信原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Python/">
+            
+                <a href="../Python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Vim/1.VimNote.html">
+            
+                <a href="../Vim/1.VimNote.html">
+            
+                    
+                    1. vimplus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Vim/2.vimHotKey.html">
+            
+                <a href="../Vim/2.vimHotKey.html">
+            
+                    
+                    2. vim 快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5. O-RAN FrontHaul前传接口的网络配置管理协议netconf</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#o-ran-fronthaul&#x524D;&#x4F20;&#x63A5;&#x53E3;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x534F;&#x8BAE;netconf"><b>1. </b>O-RAN FrontHaul&#x524D;&#x4F20;&#x63A5;&#x53E3;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x534F;&#x8BAE;netconf</a></li><ul><li><span class="title-icon "></span><a href="#&#x524D;&#x8A00;"><b>1.1. </b>&#x524D;&#x8A00;</a></li><li><span class="title-icon "></span><a href="#netconf&#x6982;&#x8FF0;&#x4E0E;&#x534F;&#x8BAE;&#x67B6;&#x6784;"><b>1.2. </b>NETCONF&#x6982;&#x8FF0;&#x4E0E;&#x534F;&#x8BAE;&#x67B6;&#x6784;</a></li><ul><li><span class="title-icon "></span><a href="#netconf&#x6982;&#x8FF0;"><b>1.2.1. </b>NETCONF&#x6982;&#x8FF0;</a></li><li><span class="title-icon "></span><a href="#netconf&#x534F;&#x8BAE;&#x67B6;&#x6784;"><b>1.2.2. </b>NETCONF&#x534F;&#x8BAE;&#x67B6;&#x6784;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5B50;&#x5C42;"><b>1.3. </b>&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5B50;&#x5C42;</a></li><li><span class="title-icon "></span><a href="#&#x6D88;&#x606F;&#x5B50;&#x5C42;"><b>1.4. </b>&#x6D88;&#x606F;&#x5B50;&#x5C42;</a></li><ul><li><span class="title-icon "></span><a href="#hello&#x6D88;&#x606F;"><b>1.4.1. </b>hello&#x6D88;&#x606F;</a></li><li><span class="title-icon "></span><a href="#rpc-&#x8BF7;&#x6C42;&#x4E0E;-rpc-reply-&#x5E94;&#x7B54;&#x6D88;&#x606F;"><b>1.4.2. </b>rpc &#x8BF7;&#x6C42;&#x4E0E; rpc-reply &#x5E94;&#x7B54;&#x6D88;&#x606F;</a></li><li><span class="title-icon "></span><a href="#notification-&#x901A;&#x77E5;&#x6D88;&#x606F;"><b>1.4.3. </b>notification &#x901A;&#x77E5;&#x6D88;&#x606F;</a></li></ul><li><span class="title-icon "></span><a href="#&#x64CD;&#x4F5C;&#x5B50;&#x5C42;"><b>1.5. </b>&#x64CD;&#x4F5C;&#x5B50;&#x5C42;</a></li><ul><li><span class="title-icon "></span><a href="#get"><b>1.5.1. </b>get</a></li><li><span class="title-icon "></span><a href="#get-config"><b>1.5.2. </b>get-config</a></li><li><span class="title-icon "></span><a href="#edit-config"><b>1.5.3. </b>edit-config</a></li><li><span class="title-icon "></span><a href="#copy-config"><b>1.5.4. </b>copy-config</a></li><li><span class="title-icon "></span><a href="#delete-config"><b>1.5.5. </b>delete-config</a></li><li><span class="title-icon "></span><a href="#lock"><b>1.5.6. </b>lock</a></li><li><span class="title-icon "></span><a href="#unlock"><b>1.5.7. </b>unlock</a></li><li><span class="title-icon "></span><a href="#close-session"><b>1.5.8. </b>close-session</a></li><li><span class="title-icon "></span><a href="#kill-session"><b>1.5.9. </b>kill-session</a></li></ul><li><span class="title-icon "></span><a href="#&#x5185;&#x5BB9;&#x5B50;&#x5C42;"><b>1.6. </b>&#x5185;&#x5BB9;&#x5B50;&#x5C42;</a></li></ul></ul></div><a href="#o-ran-fronthaul&#x524D;&#x4F20;&#x63A5;&#x53E3;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x534F;&#x8BAE;netconf" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="o-ran-fronthaul&#x524D;&#x4F20;&#x63A5;&#x53E3;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x534F;&#x8BAE;netconf"><a name="o-ran-fronthaul&#x524D;&#x4F20;&#x63A5;&#x53E3;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x534F;&#x8BAE;netconf" class="anchor-navigation-ex-anchor" href="#o-ran-fronthaul&#x524D;&#x4F20;&#x63A5;&#x53E3;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x534F;&#x8BAE;netconf"><i class="fa fa-link" aria-hidden="true"></i></a>1. O-RAN FrontHaul&#x524D;&#x4F20;&#x63A5;&#x53E3;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x534F;&#x8BAE;netconf</h1>
+<h2 id="&#x524D;&#x8A00;"><a name="&#x524D;&#x8A00;" class="anchor-navigation-ex-anchor" href="#&#x524D;&#x8A00;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x524D;&#x8A00;</h2>
+<p>&#x524D;&#x4F20;&#x63A5;&#x53E3;&#xFF08;FrontHual&#xFF09;&#x662F;&#x4F20;&#x7EDF;&#x7684;BBU&#x4E0E;RU&#x4E4B;&#x95F4;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5728;O-RAN&#x4E4B;&#x524D;&#xFF0C;&#x524D;&#x4F20;&#x63A5;&#x53E3;&#x867D;&#x7136;&#x5B9A;&#x4E49;&#x4E86;&#x7269;&#x7406;&#x8FDE;&#x63A5;&#x7684;CPRI&#x63A5;&#x53E3;&#x89C4;&#x8303;&#x6807;&#x51C6;&#xFF0C;&#x4F46;CPRI&#x4E4B;&#x4E0A;&#x627F;&#x8F7D;&#x7684;M plane&#x7684;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x5374;&#x662F;&#x8BBE;&#x5907;&#x5382;&#x5BB6;&#x79C1;&#x6709;&#x7684;&#x3002;</p>
+<p>&#x6709;&#x57FA;&#x4E8E;<font color="red">TCP</font>&#x7684;&#x3001;&#x6709;&#x57FA;&#x4E8E;<font color="red">UDP</font>&#x7684;&#xFF0C;&#x6709;&#x57FA;&#x4E8E;<font color="red">http</font>&#x534F;&#x8BAE;&#x7684;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x7684;&#xFF0C;&#x603B;&#x4E4B;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x5382;&#x5BB6;&#xFF0C;&#x6CA1;&#x6709;&#x7EDF;&#x4E00;&#x7684;&#x6807;&#x51C6;&#x3002;</p>
+<font color="red">O-RAN&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x76EE;&#x6807;&#x5C31;&#x662F;&#x628A;&#x8FD9;&#x4E2A;&#x79C1;&#x6709;&#x63A5;&#x53E3;&#x5F00;&#x653E;&#x5316;&#x3001;&#x6807;&#x51C6;&#x5316;&#x3002;</font>
+
+<p>&#x8FD9;&#x5C31;&#x9700;&#x8981;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF0C;&#x80FD;&#x591F;&#x6EE1;&#x8DB3;&#x4E0B;&#x9762;&#x7684;&#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x9700;&#x6C42;&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;<font color="red"><strong>&#x627F;&#x8F7D;&#x548C;&#x4F20;&#x9001;</strong></font>&#xFF0C;&#x5982;TCP, UDP, HTTP, SSL, SSH</p>
+<p>&#xFF08;2&#xFF09;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;<font color="red"><strong>&#x6D41;&#x7A0B;&#x63A7;&#x5236;&#x548C;&#x64CD;&#x4F5C;</strong></font>&#xFF0C;&#x5982;get&#xFF0C;set&#xFF0C;notify&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#xFF08;3&#xFF09;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;<font color="red"><strong>&#x6570;&#x636E;&#x683C;&#x5F0F;&#x4E0E;&#x6A21;&#x578B;</strong></font>&#xFF0C;&#x5373;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x5FC5;&#x987B;&#x652F;&#x6301;&#x52A8;&#x6001;&#x7F16;&#x7A0B;&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x662F;&#x9759;&#x6001;&#x7684;&#x3001;&#x4E0D;&#x53EF;&#x4F38;&#x7F29;&#x7684;&#x3002;</p>
+<p>SNMP&#x662F;&#x4F20;&#x7EDF;&#x7684;&#x7F51;&#x7EDC;&#x7BA1;&#x7406;&#x534F;&#x8BAE;&#xFF0C;&#x4F46;&#x8FD9;&#x6837;&#x7684;&#x534F;&#x8BAE;&#xFF0C;&#x4E0D;&#x592A;&#x9002;&#x5408;&#x73B0;&#x4EE3;&#x8F6F;&#x4EF6;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7F51;&#x7EDC;&#x9700;&#x6C42;&#xFF0C;&#x4E0D;&#x7B26;&#x5408;<font color="red"><strong>&#x52A8;&#x6001;&#x53EF;&#x4F38;&#x7F29;&#x6027;</strong></font>&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x65E0;&#x6CD5;&#x627F;&#x62C5;&#x5982;&#x6B64;&#x91CD;&#x4EFB;&#x3002;</p>
+<p>&#x5728;O-RAN&#x4E2D;&#xFF0C;&#x91C7;&#x7528;&#x4E86;netconf&#x534F;&#x8BAE;+Yang&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x8BED;&#x8A00;&#x5171;&#x540C;&#x627F;&#x62C5;&#x4E0A;&#x8FF0;&#x7684;&#x4E09;&#x4E2A;&#x804C;&#x8D23;&#x3002;</p>
+<p>&#x5176;&#x4E2D;<font color="red"><strong>netconf&#x627F;&#x62C5;&#x4E86;&#x4E0A;&#x8FF0;&#xFF08;1&#xFF09;&#x548C;&#xFF08;2&#xFF09;&#x804C;&#x8D23;&#xFF1B;Yang&#x627F;&#x62C5;&#x4E86;&#xFF08;3&#xFF09;&#x7684;&#x804C;&#x8D23;</strong>&#x3002;</font></p>
+<h2 id="netconf&#x6982;&#x8FF0;&#x4E0E;&#x534F;&#x8BAE;&#x67B6;&#x6784;"><a name="netconf&#x6982;&#x8FF0;&#x4E0E;&#x534F;&#x8BAE;&#x67B6;&#x6784;" class="anchor-navigation-ex-anchor" href="#netconf&#x6982;&#x8FF0;&#x4E0E;&#x534F;&#x8BAE;&#x67B6;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. NETCONF&#x6982;&#x8FF0;&#x4E0E;&#x534F;&#x8BAE;&#x67B6;&#x6784;</h2>
+<h3 id="netconf&#x6982;&#x8FF0;"><a name="netconf&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#netconf&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. NETCONF&#x6982;&#x8FF0;</h3>
+<p>NETCONF = The Network Configuration Protocol</p>
+<p>NETCONF&#x662F;&#x7531;IETF&#x5728;2003&#x5E74;5&#x6708;&#x6210;&#x7ACB;&#x4E86;Netconf&#x5DE5;&#x4F5C;&#x7EC4;&#xFF0C;&#x63D0;&#x51FA;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x57FA;&#x4E8E;<font color="red">XML</font>&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;&#xFF08;NETCONF&#xFF09;&#x534F;&#x8BAE;&#x3002;</p>
+<p>NETCONF&#x534F;&#x8BAE;&#x662F;&#x5B8C;&#x5168;&#x57FA;&#x4E8E;XML &#x4E4B;&#x4E0A;&#x7684;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x548C;&#x534F;&#x8BAE;&#x6D88;&#x606F;&#x90FD;&#x7528;XML &#x8868;&#x793A;&#x3002;</p>
+<p>XML&#x53EF;&#x4EE5;&#x8868;&#x8FBE;&#x590D;&#x6742;&#x7684;&#x3001;&#x5177;&#x6709;&#x5185;&#x5728;&#x903B;&#x8F91;&#x5173;&#x7CFB;&#x7684;&#x3001;&#x6A21;&#x578B;&#x5316;&#x7684;&#x7BA1;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E14;&#x7531;&#x4E8E;&#x5B83;&#x662F;W3C&#xFF08;&#x4E92;&#x8054;&#x7F51;&#x8054;&#x76DF;&#xFF09;&#x63D0;&#x51FA;&#x7684;&#x56FD;&#x9645;&#x6807;&#x51C6;&#xFF0C;&#x56E0;&#x800C;&#x53D7;&#x5230;&#x5E7F;&#x5927;&#x8F6F;&#x4EF6;&#x63D0;&#x4F9B;&#x5546;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x6613;&#x4E8E;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4EA4;&#x6D41;&#x548C;&#x5F00;&#x53D1;&#x3002;</p>
+<h3 id="netconf&#x534F;&#x8BAE;&#x67B6;&#x6784;"><a name="netconf&#x534F;&#x8BAE;&#x67B6;&#x6784;" class="anchor-navigation-ex-anchor" href="#netconf&#x534F;&#x8BAE;&#x67B6;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. NETCONF&#x534F;&#x8BAE;&#x67B6;&#x6784;</h3>
+<p><img src="images/5-netconf-01.png" alt="img"></p>
+<p>&#xFF08;1&#xFF09;NetConf&#x91C7;&#x7528;&#x7684;&#x662F;Client Server&#x673A;&#x5236;&#xFF0C;&#x88AB;&#x7BA1;&#x7406;&#x7684;&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x662F;NetConf&#x7684;server&#xFF0C;&#x7F51;&#x7EDC;&#x7A0B;&#x5E8F;&#x662F;Client&#x3002;</p>
+<p>&#xFF08;2&#xFF09;NetConf&#x534F;&#x8BAE;&#x627F;&#x8F7D;&#x5728;TCP/IP&#x534F;&#x8BAE;&#x4E4B;&#x4E0A;&#xFF0C;&#x5305;&#x62EC;4&#x4E2A;&#x5B50;&#x5C42;&#x534F;&#x8BAE;&#x3002;</p>
+<ul>
+<li><p><font color="red">&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5B50;&#x5C42;</font>&#xFF1A;&#x5B9A;&#x4E49;&#x7528;&#x4E8E;&#x627F;&#x8F7D;&#x6216;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#x3001;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x5C42;&#x534F;&#x8BAE;&#xFF0C;&#x5982;SSH, TLS, HTTP...</p>
+</li>
+<li><p><font color="red">&#x6D88;&#x606F;&#x5B50;&#x5C42;</font>&#xFF1A;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x3001;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;&#x6D88;&#x606F;&#x7C7B;&#x578B;, &#x5982;RPC&#xFF08;&#x76F8;&#x5F53;&#x4E8E;request&#xFF09;&#xFF0C;RPC reply&#xFF0C;notification&#x3002;</p>
+</li>
+<li><p><font color="red">&#x64CD;&#x4F5C;&#x5B50;&#x5C42;</font>&#xFF1A;&#x5B9A;&#x4E49;&#x6D88;&#x606F;&#x7684;&#x914D;&#x7F6E;&#x3001;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#x7C7B;&#x578B;&#xFF0C;&#x5982;get&#xFF0C;set&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li><p><font color="red">&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x5B50;&#x5C42;</font>&#xFF1A;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x5185;&#x5BB9;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x652F;&#x6301;Yang&#x8BED;&#x8A00;&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x8BED;&#x8A00;&#x3002;</p>
+</li>
+</ul>
+<font color="red">&#x5176;&#x4E2D;&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5C42;&#xFF0C;&#x6D88;&#x606F;&#x5C42;&#xFF0C;&#x64CD;&#x4F5C;&#x5C42;&#x8FD9;3&#x5C42;&#x662F;&#x901A;&#x8FC7;XML&#x6587;&#x672C;&#x683C;&#x5F0F;&#x6765;&#x63CF;&#x8FF0;&#x7684;&#x3002;</font>
+
+<font color="red">&#x800C;&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5B50;&#x5C42;&#x662F;&#x501F;&#x7528;&#x4E86;&#x5DF2;&#x6709;&#x7684;&#x5404;&#x79CD;&#x4E92;&#x8054;&#x7F51;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x534F;&#x8BAE;&#x3002;</font>
+
+<h2 id="&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5B50;&#x5C42;"><a name="&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5B50;&#x5C42;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5B50;&#x5C42;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5B50;&#x5C42;</h2>
+<p>NETCONF&#x7684;&#x7B2C;&#x4E00;&#x5927;&#x4F18;&#x52BF;&#x5C31;&#x662F;&#x5176;&#x4ECE;&#x534F;&#x8BAE;&#x5C42;&#x9762;&#x5C31;&#x5DF2;&#x7ECF;&#x89C4;&#x5B9A;&#x5176;&#x4F20;&#x8F93;&#x5C42;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5E26;&#x6709;&#x5B89;&#x5168;&#x52A0;&#x5BC6;&#x7684;&#x901A;&#x4FE1;&#x534F;&#x8BAE;&#xFF0C;</p>
+<p>&#x4E14;&#x501F;&#x7528;<font color="red">&#x5DF2;&#x6709;&#x7684;&#x5404;&#x79CD;&#x4E92;&#x8054;&#x7F51;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x534F;&#x8BAE;&#xFF0C;&#x4EE5;&#x53CA;&#x652F;&#x6301;&#x5176;&#x4ED6;&#x672A;&#x6765;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x7684;&#x65B0;&#x7684;&#x4F20;&#x8F93;&#x5C42;&#x534F;&#x8BAE;</font>&#x3002;&#x5982;SSH, TLS, SOAP/Http/TLS&#x7B49;&#x3002;</p>
+<p>&#x76F8;&#x6BD4;&#x4E0E;&#x5176;&#x5B83;&#x5141;&#x8BB8;&#x660E;&#x6587;&#x4F20;&#x8F93;&#x7684;&#x534F;&#x8BAE;&#x6765;&#x8BF4;&#x5176;&#x5728;&#x534F;&#x8BAE;&#x5C42;&#x9762;&#x5C31;&#x5DF2;&#x7ECF;&#x5BF9;&#x6570;&#x636E;&#x5B89;&#x5168;&#x505A;&#x4E86;&#x7B2C;&#x4E00;&#x9053;&#x5B88;&#x62A4;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x662F;&#x501F;&#x7528;&#x7684;&#x5DF2;&#x6709;&#x534F;&#x8BAE;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x4E0D;&#x5BF9;&#x5B83;&#x4EEC;&#x8FDB;&#x884C;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x63A2;&#x8BA8;&#x3002;</p>
+<h2 id="&#x6D88;&#x606F;&#x5B50;&#x5C42;"><a name="&#x6D88;&#x606F;&#x5B50;&#x5C42;" class="anchor-navigation-ex-anchor" href="#&#x6D88;&#x606F;&#x5B50;&#x5C42;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x6D88;&#x606F;&#x5B50;&#x5C42;</h2>
+<p>NETCONF&#x534F;&#x8BAE;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x65B0;&#x6807;&#x51C6;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x662F;&#x4ECE;&#x6D88;&#x606F;&#x5B50;&#x5C42;&#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;XML&#x6587;&#x672C;&#x683C;&#x5F0F;&#x7684;&#x660E;&#x6587;&#x8FDB;&#x884C;&#x627F;&#x8F7D;&#x3002;</p>
+<p>NETCONF&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x79CD;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;&#x5206;&#x522B;&#x662F;&#xFF1A;</p>
+<ul>
+<li><strong>hello</strong></li>
+<li><strong>rpc&#x548C;rpc-reply</strong></li>
+<li><strong>notification</strong></li>
+</ul>
+<h3 id="hello&#x6D88;&#x606F;"><a name="hello&#x6D88;&#x606F;" class="anchor-navigation-ex-anchor" href="#hello&#x6D88;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.1. hello&#x6D88;&#x606F;</h3>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hello</span><span class="token punctuation">&gt;</span></span></code> &#x4EC5;&#x7528;&#x4E8E;&#x65F6; netconf-server &#x548C; netconf-client &#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x4EA4;&#x6362;&#x53CC;&#x65B9;&#x7684;<font color="red"><strong>&#x7BA1;&#x7406;XML&#x4E2D;&#x6570;&#x636E;</strong></font>&#x7684;&#x80FD;&#x529B;&#x3002;
+&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;C/S&#x53CC;&#x65B9;&#x4E92;&#x53D1;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hello</span><span class="token punctuation">&gt;</span></span></code>&#x6D88;&#x606F;&#x4E14;&#x534F;&#x5546;&#x7248;&#x672C;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x8BA4;&#x4E3A;netconf&#x4F1A;&#x8BDD;&#x5EFA;&#x7ACB;&#x6210;&#x529F;&#x3002;</p>
+<p>&#x5E38;&#x7528;&#x7684;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x7684;&#x80FD;&#x529B;&#x6709;&#xFF1A;</p>
+<p><strong>(1) XPath Capability</strong></p>
+<font color="red">**XPath**&#x4E3A;XML&#x8DEF;&#x5F84;&#x8BED;&#x8A00;&#xFF08;XML Path Language&#xFF09;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x6765;&#x5B9A;&#x4F4D;XML&#x6587;&#x6863;&#x4E2D;&#x6570;&#x636E;&#x4F4D;&#x7F6E;&#x7684;&#x8BED;&#x8A00;</font>
+
+<p>&#x8BE5;&#x80FD;&#x529B;&#x8868;&#x793A;client&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5728;filter&#x4E2D;&#x4F7F;&#x7528;XPath&#x8868;&#x8FBE;&#x5F0F;&#x4F5C;&#x4E3A;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#xFF0C;&#x6765;&#x6807;&#x8BC6;&#x4E00;&#x4E2A;&#x6216;&#x4E00;&#x7EC4;XML&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>Capability Identifier:</p>
+<p>urn:ietf:params:netconf:<font color="red">capability:xpath</font>:1.0</p>
+<p><strong>(2) Writable-Running Capability</strong></p>
+<p>&#x8BE5;&#x80FD;&#x529B;&#x8868;&#x793A;server&#x662F;&#x5426;&#x652F;&#x6301;&#x76F4;&#x63A5;&#x5BF9;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>running</span><span class="token punctuation">/&gt;</span></span></code>&#x5E93;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;<strong>&#x4FEE;&#x6539;</strong>&#x64CD;&#x4F5C;&#x3002;</p>
+<p>Capability Identifier:</p>
+<p>urn:ietf:params:netconf:capability:<font color="red">writable-running</font>:1.0</p>
+<p><strong>(3) Candidate Configuration Capability</strong></p>
+<p>&#x8BE5;&#x80FD;&#x529B;&#x8868;&#x793A;server&#x662F;&#x5426;&#x5177;&#x6709;&#x4E00;&#x4E2A;candidate&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5C06;candidate&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x63D0;&#x4EA4;&#x751F;&#x6548;&#x5E76;&#x66F4;&#x65B0;&#x5230;running&#x6570;&#x636E;&#x5E93;</p>
+<p>Capability Identifier:</p>
+<p>urn:ietf:params:netconf:<font color="red">capability:candidate</font>:1.0</p>
+<p><strong>(&#xFF14;) Rollback-on-Error Capability</strong></p>
+<p>&#x8BE5;&#x80FD;&#x529B;&#x8868;&#x793A;server&#x5728;&#x6267;&#x884C;client&#x53D1;&#x9001;&#x7684;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x51FA;&#x9519;&#x540E;<strong>&#x662F;&#x5426;</strong>&#x53EF;&#x4EE5;&#x8FDB;&#x884C;<strong>&#x56DE;&#x6EDA;</strong></p>
+<p>Capability Identifier:</p>
+<p>urn:ietf:params:netconf:capability:rollback-on-error:1.0</p>
+<p><strong>(&#xFF15;) Validate Capability</strong></p>
+<font color="red">&#x8BE5;&#x80FD;&#x529B;&#x8868;&#x793A;server&#x662F;&#x5426;&#x80FD;&#x591F;&#x6821;&#x9A8C;client&#x53D1;&#x9001;&#x7684;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x662F;&#x5426;&#x6B63;&#x786E;</font>
+
+<p>Capability Identifier:</p>
+<p>urn:ietf:params:netconf:capability:validate:1.1</p>
+<p><strong>(&#xFF16;) Distinct startup Capability</strong></p>
+<font color="red">&#x8BE5;&#x80FD;&#x529B;&#x8868;&#x793A;server&#x6709;&#x4E00;&#x4E2A;startup&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x542F;&#x52A8;&#x914D;&#x7F6E;</font>
+
+<p>Capability Identifier:</p>
+<p>urn:ietf:params:netconf:capability:startup:1.0</p>
+<h3 id="rpc-&#x8BF7;&#x6C42;&#x4E0E;-rpc-reply-&#x5E94;&#x7B54;&#x6D88;&#x606F;"><a name="rpc-&#x8BF7;&#x6C42;&#x4E0E;-rpc-reply-&#x5E94;&#x7B54;&#x6D88;&#x606F;" class="anchor-navigation-ex-anchor" href="#rpc-&#x8BF7;&#x6C42;&#x4E0E;-rpc-reply-&#x5E94;&#x7B54;&#x6D88;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.2. rpc &#x8BF7;&#x6C42;&#x4E0E; rpc-reply &#x5E94;&#x7B54;&#x6D88;&#x606F;</h3>
+<p>&#xFF08;1&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span><span class="token punctuation">&gt;</span></span></code></p>
+<font color="red">**&#x662F;&#x7531;netconf-client&#x53D1;&#x8D77;&#x7684;&#xFF0C;&#x53D1;&#x9001;&#x5230;netconf-server&#x7684;&#x6D88;&#x606F;&#x3002;&#x7528;&#x4E8E;client&#x8BF7;&#x6C42;server&#x6267;&#x884C;&#x67D0;&#x9879;&#x5177;&#x4F53;&#x7684;&#x64CD;&#x4F5C;&#x3002;**</font>
+
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span><span class="token punctuation">&gt;</span></span></code>&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5F3A;&#x5236;&#x5C5E;&#x6027;&#x201D;message-id&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;id&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x8C03;&#x9012;&#x589E;&#x7684;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x540C;&#x4E00;&#x4F1A;&#x8BDD;&#x5185;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x3002;</p>
+<p>&#x8BE5;id&#x7528;&#x4E8E;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span><span class="token punctuation">&gt;</span></span></code>&#x548C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc-reply</span><span class="token punctuation">&gt;</span></span></code>&#x7684;&#x914D;&#x5BF9;&#x3002;</p>
+<p>&#xFF08;2&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc-reply</span><span class="token punctuation">&gt;</span></span></code></p>
+<font color="red">&#x662F;&#x6709;netconf-server&#x53D1;&#x9001;&#x7ED9;netconf-client&#x7684;rpc&#x54CD;&#x5E94;&#x3002;</font>
+
+<p>&#x4E0D;&#x80FD;&#x4E3B;&#x52A8;&#x53D1;&#x8D77;&#xFF0C;&#x4EC5;&#x80FD;&#x5728;&#x6536;&#x5230;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span><span class="token punctuation">&gt;</span></span></code>&#x4E4B;&#x540E;&#x56DE;&#x590D;&#xFF0C;&#x5207;&#x5FC5;&#x987B;&#x643A;&#x5E26;&#x4E0E;&#x6536;&#x5230;&#x7684;rpc&#x76F8;&#x540C;&#x7684;message-id&#x3002;</p>
+<p>&#x5728;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc-reply</span><span class="token punctuation">&gt;</span></span></code>&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x79CD;&#x9ED8;&#x8BA4;&#x7684;&#x5143;&#x7D20;&#x5206;&#x522B;&#x662F;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ok</span><span class="token punctuation">&gt;</span></span></code>&#x548C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc-error</span><span class="token punctuation">&gt;</span></span></code>&#x3002;</p>
+<p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ok</span><span class="token punctuation">&gt;</span></span></code>&#x8868;&#x793A;&#x672A;&#x5B9A;&#x4E49;&#x54CD;&#x5E94;&#x5185;&#x5BB9;&#x7684;rpc&#x6267;&#x884C;&#x6210;&#x529F;&#xFF0C;</p>
+<p>&#x800C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc-error</span><span class="token punctuation">&gt;</span></span></code>&#x8868;&#x793A;rpc&#x6267;&#x884C;&#x5931;&#x8D25;&#x3002;</p>
+<h3 id="notification-&#x901A;&#x77E5;&#x6D88;&#x606F;"><a name="notification-&#x901A;&#x77E5;&#x6D88;&#x606F;" class="anchor-navigation-ex-anchor" href="#notification-&#x901A;&#x77E5;&#x6D88;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.3. notification &#x901A;&#x77E5;&#x6D88;&#x606F;</h3>
+<p>&#x7528;&#x4E8E;netconf-server&#x5411;netconf-client&#x4E3B;&#x52A8;&#x5355;&#x65B9;&#x5411;&#x4E0A;&#x62A5;&#x6D88;&#x606F;&#x3002;</p>
+<font color="red">&#xFF08;1&#xFF09;Netconf&#x7684;&#x901A;&#x77E5;&#x91C7;&#x7528;&#x7684;&#x662F;&#x8BA2;&#x9605;&#x53D1;&#x5E03;&#x673A;&#x5236;&#xFF0C;server&#x4EC5;&#x4F1A;&#x5411;&#x53D1;&#x9001;&#x8FC7;&#x8BA2;&#x9605;&#x8BF7;&#x6C42;&#x7684;client&#x53D1;&#x9001;&#x901A;&#x77E5;&#x3002;</font>
+
+<p>&#xFF08;2&#xFF09;Netconf&#x7684;&#x901A;&#x77E5;&#x662F;&#x4EE5;Stream&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7684;&#xFF0C;&#x4E0D;&#x540C;&#x7C7B;&#x7684;Stream&#x4EE5;&#x4E0D;&#x540C;&#x7684;stream-name&#x8FDB;&#x884C;&#x533A;&#x5206;&#x3002;netconf-server&#x9ED8;&#x8BA4;&#x9700;&#x8981;&#x652F;&#x6301;&#x7684;stream-name&#x662F;&#x201D;NETCONF&#x201D;&#x3002;</p>
+<h2 id="&#x64CD;&#x4F5C;&#x5B50;&#x5C42;"><a name="&#x64CD;&#x4F5C;&#x5B50;&#x5C42;" class="anchor-navigation-ex-anchor" href="#&#x64CD;&#x4F5C;&#x5B50;&#x5C42;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x64CD;&#x4F5C;&#x5B50;&#x5C42;</h2>
+<p>&#x64CD;&#x4F5C;&#x5B50;&#x5C42;&#x5B9A;&#x4E49;&#x6D88;&#x606F;&#x7684;&#x914D;&#x7F6E;&#x3001;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x64CD;&#x4F5C;&#x5C42;&#x4EC5;&#x9488;&#x5BF9;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span><span class="token punctuation">&gt;</span></span></code>&#x548C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc-reply</span><span class="token punctuation">&gt;</span></span></code>&#x6D88;&#x606F;&#x4E0A;&#xFF0C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hello</span><span class="token punctuation">&gt;</span></span></code>&#x548C;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>notification</span><span class="token punctuation">&gt;</span></span></code>&#x6D88;&#x606F;&#x65E0;&#x64CD;&#x4F5C;&#x5C42;&#x3002;</p>
+<p>NETCONF&#x534F;&#x8BAE;&#x89C4;&#x5B9A;&#x4E86;<strong>9&#x79CD;</strong>&#x7B80;&#x5355;&#x7684;rpc&#x64CD;&#x4F5C;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x652F;&#x6301;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;rpc&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#xFF08;1&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>get</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x67E5;&#x8BE2;<font color="red"><strong>&#x72B6;&#x6001;</strong></font>&#x6570;&#x636E;</p>
+<p>&#xFF08;2&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>get-config</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x67E5;&#x8BE2;<font color="red"><strong>&#x914D;&#x7F6E;</strong></font>&#x6570;&#x636E;</p>
+<p>&#xFF08;3&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>edit-config</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6570;&#x636E;</p>
+<p>&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x7684;&#x7684;<strong>&#x5B50;&#x64CD;&#x4F5C;</strong>&#x6709;&#xFF1A;</p>
+<ul>
+<li><p><strong>merge:</strong> &#x5408;&#x5E76;&#x64CD;&#x4F5C;&#xFF0C;&#x6B64;&#x64CD;&#x4F5C;&#x4E3A;&#x9ED8;&#x8BA4;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li><p><strong>replace:</strong> &#x66FF;&#x6362;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x5219;&#x66FF;&#x6362;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x521B;&#x5EFA;&#x3002;</p>
+</li>
+<li><p><strong>create:</strong> &#x521B;&#x5EFA;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x62A5;&#x9519;&#x8BEF;&#x201C;data-exists&#x201D;&#x3002;</p>
+</li>
+<li><p><strong>delete:</strong> &#x5220;&#x9664;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x5B58;&#x5728;&#x5219;&#x5220;&#x9664;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x62A5;&#x9519; &#x201C;data-missing&#x201D;&#x3002;</p>
+</li>
+<li><p><strong>remove:</strong> &#x5220;&#x9664;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x5B58;&#x5728;&#x5219;&#x5220;&#x9664;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x5FFD;&#x7565;&#x3002;</p>
+</li>
+</ul>
+<p>&#xFF08;4&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>copy-config</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;copy&#x914D;&#x7F6E;&#x6570;&#x636E;</p>
+<p>&#xFF08;5&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>delete-config</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x5220;&#x9664;&#x914D;&#x7F6E;&#x6570;&#x636E;</p>
+<p>&#xFF08;6&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>lock</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x9501;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5728;&#x4FEE;&#x6539;&#x3001;&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;&#x65F6;&#xFF0C;<font color="red">&#x5FC5;&#x987B;&#x5148;&#x9501;&#x5B9A;&#x6570;&#x636E;&#x5E93;</font></p>
+<p>&#xFF08;7&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>unlock</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x89E3;&#x9501;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<p>&#xFF08;8&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>close-session</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x6B63;&#x5E38;&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;</p>
+<p>&#xFF08;9&#xFF09;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kill-session</span><span class="token punctuation">&gt;</span></span></code>&#xFF1A;&#x5F3A;&#x884C;&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;</p>
+<h3 id="get"><a name="get" class="anchor-navigation-ex-anchor" href="#get"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.1. get</h3>
+<p>&#x7528;&#x4E8E;&#x67E5;&#x8BE2;<font color="red"><strong>&#x72B6;&#x6001;</strong></font>&#x6570;&#x636E;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x8981;&#x83B7;&#x53D6;server&#x652F;&#x6301;&#x7684;&#x80FD;&#x529B;&#xFF1A;<code>urn:ietf:params:netconf:capability:xpath:1.0</code>&#xFF0C;&#x5219;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;filter&#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;</p>
+<p>&#x4EE3;&#x7801;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>get</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>subtree<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>top</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://example.com/schema/1.2/stats<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interfaces</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interface</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ifName</span><span class="token punctuation">&gt;</span></span>eth0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ifName</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interface</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interfaces</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>top</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>get</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc</span><span class="token punctuation">&gt;</span></span>
+
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc-reply</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>top</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://example.com/schema/1.2/stats<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interfaces</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interface</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ifName</span><span class="token punctuation">&gt;</span></span>eth0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ifName</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ifInOctets</span><span class="token punctuation">&gt;</span></span>45621<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ifInOctets</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ifOutOctets</span><span class="token punctuation">&gt;</span></span>774344<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ifOutOctets</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interface</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interfaces</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>top</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>data</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc-reply</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h3 id="get-config"><a name="get-config" class="anchor-navigation-ex-anchor" href="#get-config"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.2. get-config</h3>
+<p>&#x7528;&#x4E8E;&#x67E5;&#x8BE2;<strong>&#x914D;&#x7F6E;&#x6570;&#x636E;</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">/&gt;</span></span></code>&#x6765;&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7684;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<p>&#x4EE3;&#x7801;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span><span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>get-config</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>running</span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>subtree<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>top</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://example.com/schema/1.2/config<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>users</span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>top</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>get-config</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc-reply</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>top</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://example.com/schema/1.2/config<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>users</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>root<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">&gt;</span></span>superuser<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>type</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>full-name</span><span class="token punctuation">&gt;</span></span>Charlie Root<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>full-name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>company-info</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dept</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dept</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>company-info</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>user</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- additional &lt;user&gt; elements appear here... --&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>users</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>top</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>data</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc-reply</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h3 id="edit-config"><a name="edit-config" class="anchor-navigation-ex-anchor" href="#edit-config"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.3. edit-config</h3>
+<p>&#x7528;&#x4E8E;&#x5BF9;&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x5B50;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li><strong>merge</strong>: &#x5408;&#x5E76;&#x64CD;&#x4F5C;&#xFF0C;&#x6B64;&#x64CD;&#x4F5C;&#x4E3A;&#x9ED8;&#x8BA4;&#x64CD;&#x4F5C;&#x3002;</li>
+<li><strong>replace</strong>: &#x66FF;&#x6362;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x5219;&#x66FF;&#x6362;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x521B;&#x5EFA;&#x3002;</li>
+<li><strong>create</strong>: &#x521B;&#x5EFA;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x62A5;&#x9519;&#x8BEF;&#x201C;data-exists&#x201D;&#x3002;</li>
+<li><strong>delete</strong>: &#x5220;&#x9664;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x5B58;&#x5728;&#x5219;&#x5220;&#x9664;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x62A5;&#x9519; &#x201C;data-missing&#x201D;&#x3002;</li>
+<li><strong>remove</strong>: &#x5220;&#x9664;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x5B58;&#x5728;&#x5219;&#x5220;&#x9664;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x5FFD;&#x7565;&#x3002;</li>
+</ul>
+<p>&#x4EE3;&#x7801;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>edit-config</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>running</span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>config</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>top</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://example.com/schema/1.2/config<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interface</span> <span class="token attr-name"><span class="token namespace">xc:</span>operation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>replace<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>Ethernet0/0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mtu</span><span class="token punctuation">&gt;</span></span>1500<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mtu</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>address</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>192.0.2.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>prefix-length</span><span class="token punctuation">&gt;</span></span>24<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>prefix-length</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>address</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interface</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>top</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>config</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>edit-config</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>edit-config</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>running</span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>default-operation</span><span class="token punctuation">&gt;</span></span>none<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>default-operation</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>config</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>top</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://example.com/schema/1.2/config<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>protocols</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ospf</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>area</span><span class="token punctuation">&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>0.0.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interfaces</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interface</span> <span class="token attr-name"><span class="token namespace">xc:</span>operation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>delete<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>192.0.2.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interface</span><span class="token punctuation">&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interfaces</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>area</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ospf</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>protocols</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>top</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>config</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>edit-config</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h3 id="copy-config"><a name="copy-config" class="anchor-navigation-ex-anchor" href="#copy-config"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.4. copy-config</h3>
+<p>&#x5C06;&#x4E00;&#x4E2A;&#x5E93;&#x7684;&#x6570;&#x636E;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5E93;&#x3002;
+&#x4EE3;&#x7801;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>copy-config</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>running</span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>https://user:password@example.com/cfg/new.txt<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>copy-config</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h3 id="delete-config"><a name="delete-config" class="anchor-navigation-ex-anchor" href="#delete-config"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.5. delete-config</h3>
+<p>&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x3002;&#x4F46;&#x662F;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>running</span><span class="token punctuation">/&gt;</span></span></code>&#x5E93;&#x4E0D;&#x80FD;&#x88AB;&#x5220;&#x9664;&#x3002;</p>
+<p>&#x4EE3;&#x7801;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>delete-config</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>startup</span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>delete-config</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h3 id="lock"><a name="lock" class="anchor-navigation-ex-anchor" href="#lock"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.6. lock</h3>
+<p>&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x9501;&#xFF0C;&#x5F53;&#x67D0;&#x4E2A;client&#x83B7;&#x5F97;&#x4E86;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x9501;&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x5176;&#x6CA1;&#x6709;&#x91CA;&#x653E;&#x8BE5;&#x9501;&#x4E4B;&#x524D;&#xFF0C;&#x5176;&#x4F59;client&#x5747;&#x4E0D;&#x80FD;&#x83B7;&#x5F97;&#x8BE5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x9501;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x3002;&#x540C;&#x4E00;client&#x4E5F;&#x4E0D;&#x80FD;&#x5728;&#x6CA1;&#x6709;&#x91CA;&#x653E;&#x9501;&#x4E4B;&#x524D;&#xFF0C;&#x91CD;&#x590D;&#x7533;&#x8BF7;&#x9501;&#x3002;</p>
+<p>&#x83B7;&#x53D6;&#x9501;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x907F;&#x514D;&#x5E76;&#x53D1;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x51B2;&#x7A81;&#x3002;</p>
+<p>&#x4EE3;&#x7801;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>lock</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>running</span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>lock</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h3 id="unlock"><a name="unlock" class="anchor-navigation-ex-anchor" href="#unlock"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.7. unlock</h3>
+<p>&#x91CA;&#x653E;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x9501;&#x3002;client&#x53EA;&#x80FD;&#x91CA;&#x653E;&#x81EA;&#x5DF1;&#x6301;&#x6709;&#x7684;&#x9501;&#xFF0C;&#x4E0D;&#x80FD;&#x91CA;&#x653E;&#x5176;&#x5B83;client&#x7684;&#x9501;&#x3002;</p>
+<p>&#x4EE3;&#x7801;&#x6848;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rpc</span> <span class="token attr-name">message-id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>101<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>urn:ietf:params:xml:ns:netconf:base:1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>unlock</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>running</span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>unlock</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rpc</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h3 id="close-session"><a name="close-session" class="anchor-navigation-ex-anchor" href="#close-session"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.8. close-session</h3>
+<p>&#x4F18;&#x96C5;&#x5173;&#x95ED;netconf&#x4F1A;&#x8BDD;&#xFF0C;netconf-server&#x5C06;&#x91CA;&#x653E;&#x8BE5;client&#x6301;&#x6709;&#x7684;&#x9501;&#x548C;&#x4E3A;&#x5176;&#x5206;&#x914D;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x5E76;&#x4F18;&#x96C5;&#x7684;&#x5173;&#x95ED;&#x4E0E;&#x8BE5;client&#x94FE;&#x63A5;&#x3002;&#x6240;&#x6709;&#x5728;<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>close-session</span><span class="token punctuation">&gt;</span></span></code>&#x4E4B;&#x540E;&#x6536;&#x5230;&#x7684;&#x64CD;&#x4F5C;&#x5747;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#x3002;</p>
+<h3 id="kill-session"><a name="kill-session" class="anchor-navigation-ex-anchor" href="#kill-session"><i class="fa fa-link" aria-hidden="true"></i></a>1.5.9. kill-session</h3>
+<p>&#x5F3A;&#x5236;&#x5173;&#x95ED;netconf&#x4F1A;&#x8BDD;&#x3002;</p>
+<h2 id="&#x5185;&#x5BB9;&#x5B50;&#x5C42;"><a name="&#x5185;&#x5BB9;&#x5B50;&#x5C42;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x5BB9;&#x5B50;&#x5C42;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x5185;&#x5BB9;&#x5B50;&#x5C42;</h2>
+<font color="red">**&#x5F00;&#x653E;&#x6027;**</font>&#x3001;<font color="red">**&#x6807;&#x51C6;&#x5316;**</font>&#x7684;&#x914D;&#x7F6E;&#x3001;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x662F;&#x6574;&#x4E2A;netconf&#x534F;&#x8BAE;&#x7684;<font color="red">**&#x7CBE;&#x9AD3;**</font>&#x6240;&#x5728;&#x3002;
+
+&#x653E;&#x4F53;&#x6027;&#xFF1A;&#x4F53;&#x73B0;&#x5728;netconf&#x534F;&#x8BAE;&#x672C;&#x8EAB;&#x4E0D;&#x5BF9;&#x5185;&#x5BB9;&#x5C42;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;<font color="red">**&#x6570;&#x636E;&#x7ED3;&#x6784;**</font>&#x505A;&#x4EFB;&#x4F55;&#x7684;<font color="red">**&#x9884;&#x5148;**</font>&#x3001;<font color="red">**&#x56FA;&#x5B9A;&#x5316;**</font>&#x7684;<font color="red">**&#x9650;&#x5B9A;**</font>&#x548C;<font color="red">**&#x89C4;&#x5B9A;**</font>&#x3002;
+
+&#x6807;&#x51C6;&#x5316;&#xFF1A;&#x4F53;&#x73B0;&#x5728;&#x5BF9;&#x5185;&#x5BB9;&#x5C42;&#x7684;&#x914D;&#x7F6E;&#x3001;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;<font color="red">**&#x683C;&#x5F0F;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x5B9A;&#x4E49;**</font>&#x80FD;&#x591F;&#x8FDB;&#x884C;&#x67D0;&#x79CD;&#x7EA6;&#x675F;&#xFF0C;&#x4E0D;&#x80FD;&#x4EE5;&#x4EFB;&#x610F;&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x5728;&#xFF0C;&#x5426;&#x5219;&#x5C31;<font color="red">**&#x65E0;&#x6CD5;**</font>&#x5B9E;&#x73B0;&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;<font color="red">**&#x4E92;&#x8054;&#x4E92;&#x901A;**</font>&#x3002;
+
+**Yang&#x8BED;&#x8A00;&#x662F;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5EFA;&#x6A21;&#x7684;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#xFF0C;NetConf&#x4F7F;&#x7528;Yang&#x8BED;&#x8A00;&#x5BF9;&#x5185;&#x5BB9;&#x5B50;&#x5C42;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7EA6;&#x675F;&#x548C;&#x5EFA;&#x6A21;**&#x3002;
+
+&#x5728;netconf&#x51FA;&#x73B0;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x6240;&#x719F;&#x77E5;&#x4E14;&#x5E38;&#x7528;&#x7684;&#x534F;&#x8BAE;&#xFF0C;&#x5747;&#x91C7;&#x7528;&#x5728;&#x534F;&#x8BAE;&#x4E2D;<font color="red">**&#x56FA;&#x5B9A;**&#x7684;&#x62A5;&#x6587;&#x7684;&#x7ED3;&#x6784;&#x4F53;</font>&#xFF0C;&#x5E76;&#x6309;&#x5B57;&#x8282;&#x6D41;&#x8BFB;&#x53D6;&#x5E76;&#x89E3;&#x6790;&#x7684;&#x67B6;&#x6784;&#x3002;
+
+&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x5728;&#x5B57;&#x8282;&#x6D41;&#x4E2D;&#x8868;&#x8FBE;&#x66F4;&#x4E30;&#x5BCC;&#x7684;&#x62A5;&#x6587;&#x7ED3;&#x6784;&#xFF0C;&#x6211;&#x4EEC;&#x91C7;&#x7528;TLV&#x7B49;&#x65B9;&#x5F0F;&#x6765;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;&#x3002;&#x4F46;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x51E0;&#x4E4E;&#x867D;&#x7136;&#x5177;&#x5907;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x6269;&#x5C55;&#x4F38;&#x7F29;&#x6027;&#xFF0C;&#x4E0D;&#x5177;&#x5907;&#x4EFB;&#x4F55;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x4E00;&#x65E6;&#x6269;&#x5145;<font color="red">**&#x65B0;&#x7684;&#x5BF9;&#x8C61;**</font>&#xFF0C;&#x6216;&#x4FEE;&#x6539;&#x5BF9;&#x8C61;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x53D8;&#x66F4;&#x4EE3;&#x7801;&#x3002;&#x800C;&#x5982;&#x679C;&#x5BF9;&#x4E00;&#x4E2A;&#x534F;&#x8BAE;&#x6269;&#x5C55;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x79C1;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x9996;&#x5148;&#x534F;&#x8BAE;&#x4E0D;&#x5728;&#x6807;&#x51C6;&#xFF0C;&#x5176;&#x6B21;&#x534F;&#x8BAE;&#x6808;&#x7684;&#x4EE3;&#x7801;&#x51E0;&#x4E4E;&#x662F;&#x5B8C;&#x5168;&#x91CD;&#x5199;&#x3002;
+
+<font color="red">**&#x800C;netconf&#x7684;&#x51FA;&#x73B0;&#x53EF;&#x4EE5;&#x8BF4;&#x76F4;&#x63A5;&#x5BF9;&#x4E0A;&#x8FF0;&#x95EE;&#x9898;&#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x6B21;&#x201D;&#x964D;&#x7EF4;&#x201C;&#x6253;&#x51FB;&#xFF0C;&#x5B83;&#x5B8C;&#x5168;&#x7AD9;&#x5728;&#x4E86;&#x4E00;&#x4E2A;&#x66F4;&#x9AD8;&#x7684;&#x7EF4;&#x5EA6;&#x6765;&#x89E3;&#x51B3;&#x4E0A;&#x8FF0;&#x95EE;&#x9898;**&#x3002;</font>
+
+<p>&#x5176;&#x5185;&#x5BB9;&#x5C42;<font color="red"><strong>&#x672A;&#x6307;&#x5B9A;&#x5177;&#x4F53;</strong></font>&#x7684;&#x6A21;&#x578B;&#x7ED3;&#x6784;&#xFF0C;&#x800C;&#x662F;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x5957;&#x5EFA;&#x6A21;&#x8BED;&#x8A00;&#x2013;yang&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x4F7F;&#x7528;yang&#x5B9A;&#x4E49;&#x7684;<strong>&#x6570;&#x636E;&#x6A21;&#x578B;</strong>&#xFF0C;&#x5747;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;netconf&#x7684;&#x5185;&#x5BB9;&#x5C42;&#x3002;&#x6240;&#x4EE5;&#x5BF9;netconf&#x800C;&#x8A00;&#xFF0C;&#x201C;&#x6269;&#x5C55;&#x201D;&#x5C31;&#x662F;&#x4E0D;&#x65AD;&#x7684;&#x589E;&#x52A0;&#x548C;&#x4FEE;&#x6539;<strong>Yang&#x8BED;&#x8A00;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</strong>&#x800C;&#x5DF2;&#x3002;&#x800C;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7684;&#x914D;&#x7F6E;&#x3001;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x3002;</p>
+<p><strong>Yang&#x672C;&#x8EAB;&#x662F;&#x72EC;&#x7ACB;&#x4E8E;NetConf&#x7684;&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x8BED;&#x8A00;&#xFF0C;NetConf&#x53EA;&#x662F;&#x501F;&#x7528;&#x8BE5;&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x8BED;&#x8A00;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x5BF9;&#x5176;&#x7684;&#x652F;&#x6301;&#x3002;</strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4.ORAN_RIC.html" class="navigation navigation-prev " aria-label="Previous page: 4. O-RAN 近实时无线接入网智能控制器RIC的架构">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="6.ORAN_yang.html" class="navigation navigation-next " aria-label="Next page: 6. O-RAN FrontHaul前传接口的网络配置管理与Yang数据建模语言">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5. O-RAN FrontHaul前传接口的网络配置管理协议netconf","level":"1.2.5","depth":2,"next":{"title":"6. O-RAN FrontHaul前传接口的网络配置管理与Yang数据建模语言","level":"1.2.6","depth":2,"path":"ORAN/6.ORAN_yang.md","ref":"ORAN/6.ORAN_yang.md","articles":[]},"previous":{"title":"4. O-RAN 近实时无线接入网智能控制器RIC的架构","level":"1.2.4","depth":2,"path":"ORAN/4.ORAN_RIC.md","ref":"ORAN/4.ORAN_RIC.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","prism","ace","copy-code-button","splitter","back-to-top-button","chapter-fold","expandable-chapters-small","favicon","autotheme","advanced-emoji","book-summary-scroll-position-saver","anchor-navigation-ex","emphasize","theme-comscore","multipart"],"ignores":["_book","node_modules"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"emphasize":{},"ace":{},"book-summary-scroll-position-saver":{},"splitter":{},"search-pro":{},"multipart":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"family":"serif","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"/assets/images/favicon.ico","bookmark":"/assets/images/favicon.ico","appleTouch":"/assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"/assets/images/apple-touch-icon-120x120.png","180x180":"/assets/images/apple-touch-icon-180x180.png"}},"theme-comscore":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"autotheme":{"night":[20,21,22,23,0,1,2,3,4,5],"sepia":[6,7,8,18,19,19],"white":[9,10,11,12,13,14,15,16,17]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Mr.Miaow","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"C note","language":"zh-hans","gitbook":"3.x.x","description":"C note"},"file":{"path":"ORAN/5.ORAN_netconf.md","mtime":"2022-05-18T02:46:21.071Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-08T02:50:36.798Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-autotheme/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

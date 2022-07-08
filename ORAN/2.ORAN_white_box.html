@@ -1,0 +1,925 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2. O-RAN 白盒化 · C note</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Mr.Miaow">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3.ORAN_OAM_OM.html" />
+    
+    
+    <link rel="prev" href="1.ORAN_Architecture.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    O-RAN
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.ORAN_Architecture.html">
+            
+                <a href="1.ORAN_Architecture.html">
+            
+                    
+                    1. O-RAN 总体架构与概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="2.ORAN_white_box.html">
+            
+                <a href="2.ORAN_white_box.html">
+            
+                    
+                    2. O-RAN 白盒化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="3.ORAN_OAM_OM.html">
+            
+                <a href="3.ORAN_OAM_OM.html">
+            
+                    
+                    3. O-RAN OAM操作维护管理架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="4.ORAN_RIC.html">
+            
+                <a href="4.ORAN_RIC.html">
+            
+                    
+                    4. O-RAN 近实时无线接入网智能控制器RIC的架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="5.ORAN_netconf.html">
+            
+                <a href="5.ORAN_netconf.html">
+            
+                    
+                    5. O-RAN FrontHaul前传接口的网络配置管理协议netconf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="6.ORAN_yang.html">
+            
+                <a href="6.ORAN_yang.html">
+            
+                    
+                    6. O-RAN FrontHaul前传接口的网络配置管理与Yang数据建模语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="7.ORAN_nFAPI.html">
+            
+                <a href="7.ORAN_nFAPI.html">
+            
+                    
+                    7. nFAPI接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="8.ORAN_eCPRI.html">
+            
+                <a href="8.ORAN_eCPRI.html">
+            
+                    
+                    8. eCPRI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../CcodeSummary/">
+            
+                <a href="../CcodeSummary/">
+            
+                    
+                    C/C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../CcodeSummary/CPlus/">
+            
+                <a href="../CcodeSummary/CPlus/">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../CcodeSummary/CPlus/1.cplus_overview-00.html">
+            
+                <a href="../CcodeSummary/CPlus/1.cplus_overview-00.html">
+            
+                    
+                    C++ 思维导图-01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../CcodeSummary/CPlus/2.cplus_overview-01.html">
+            
+                <a href="../CcodeSummary/CPlus/2.cplus_overview-01.html">
+            
+                    
+                    C++ 思维导图-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../CcodeSummary/CPlus/3.cplus_overview-02.html">
+            
+                <a href="../CcodeSummary/CPlus/3.cplus_overview-02.html">
+            
+                    
+                    C++ 思维导图-03
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../CcodeSummary/CSkillSummary/">
+            
+                <a href="../CcodeSummary/CSkillSummary/">
+            
+                    
+                    C技巧汇总
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../CcodeSummary/CSkillSummary/1.IPC.html">
+            
+                <a href="../CcodeSummary/CSkillSummary/1.IPC.html">
+            
+                    
+                    1. 进程间通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../CcodeSummary/CDesignMode/">
+            
+                <a href="../CcodeSummary/CDesignMode/">
+            
+                    
+                    C设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../CcodeSummary/CDesignMode/1.Overview.html">
+            
+                <a href="../CcodeSummary/CDesignMode/1.Overview.html">
+            
+                    
+                    1. 概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../CcodeSummary/CDesignMode/2.StateMechine.html">
+            
+                <a href="../CcodeSummary/CDesignMode/2.StateMechine.html">
+            
+                    
+                    2. 状态机模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../CcodeSummary/CDesignMode/3.Chain_of_Responsibility.html">
+            
+                <a href="../CcodeSummary/CDesignMode/3.Chain_of_Responsibility.html">
+            
+                    
+                    3. 责任链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../CcodeSummary/CDesignMode/4.Observer.html">
+            
+                <a href="../CcodeSummary/CDesignMode/4.Observer.html">
+            
+                    
+                    4. 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../CcodeSummary/CDesignMode/5.Command.html">
+            
+                <a href="../CcodeSummary/CDesignMode/5.Command.html">
+            
+                    
+                    5. 命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../CcodeSummary/CDesignMode/6.Adapter.html">
+            
+                <a href="../CcodeSummary/CDesignMode/6.Adapter.html">
+            
+                    
+                    6. 适配及系列模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../CcodeSummary/CDesignMode/7.Builder.html">
+            
+                <a href="../CcodeSummary/CDesignMode/7.Builder.html">
+            
+                    
+                    7. 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../CcodeSummary/CDesignMode/8.Facade.html">
+            
+                <a href="../CcodeSummary/CDesignMode/8.Facade.html">
+            
+                    
+                    8. 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../CcodeSummary/CDesignMode/9.Visitor.html">
+            
+                <a href="../CcodeSummary/CDesignMode/9.Visitor.html">
+            
+                    
+                    9. 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../CcodeSummary/CDesignMode/10.Atypical.html">
+            
+                <a href="../CcodeSummary/CDesignMode/10.Atypical.html">
+            
+                    
+                    10. 非典型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../CcodeSummary/CMemory/">
+            
+                <a href="../CcodeSummary/CMemory/">
+            
+                    
+                    C内存-运行机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../PHY/">
+            
+                <a href="../PHY/">
+            
+                    
+                    PHY
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../PHY/1.电磁波.html">
+            
+                <a href="../PHY/1.电磁波.html">
+            
+                    
+                    1. 无线电波
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../PHY/2.4G_5G.html">
+            
+                <a href="../PHY/2.4G_5G.html">
+            
+                    
+                    2. 4G&5G专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../PHY/3.通信原理.html">
+            
+                <a href="../PHY/3.通信原理.html">
+            
+                    
+                    3. 通信原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Python/">
+            
+                <a href="../Python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Vim/">
+            
+                <a href="../Vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Vim/1.VimNote.html">
+            
+                <a href="../Vim/1.VimNote.html">
+            
+                    
+                    1. vimplus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Vim/2.vimHotKey.html">
+            
+                <a href="../Vim/2.vimHotKey.html">
+            
+                    
+                    2. vim 快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2. O-RAN 白盒化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#o-ran-&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;"><b>1. </b>O-RAN &#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8F6F;&#x4EF6;&#x7684;&#x9ED1;&#x76D2;&#x6D4B;&#x8BD5;&#x548C;&#x767D;&#x76D2;&#x6D4B;&#x8BD5;"><b>1.1. </b>&#x8F6F;&#x4EF6;&#x7684;&#x9ED1;&#x76D2;&#x6D4B;&#x8BD5;&#x548C;&#x767D;&#x76D2;&#x6D4B;&#x8BD5;</a></li><li><span class="title-icon "></span><a href="#5g&#x534F;&#x8BAE;&#x6808;&#x529F;&#x80FD;&#x5207;&#x5206;&#x9009;&#x9879;&#x4E0E;o-ran&#x767D;&#x76D2;&#x5316;"><b>1.2. </b>5G&#x534F;&#x8BAE;&#x6808;&#x529F;&#x80FD;&#x5207;&#x5206;&#x9009;&#x9879;&#x4E0E;O-RAN&#x767D;&#x76D2;&#x5316;</a></li><li><span class="title-icon "></span><a href="#o-ran-&#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;option6&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;"><b>1.3. </b>O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option6&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;</a></li><ul><li><span class="title-icon "></span><a href="#o-ru6&#x7684;&#x67B6;&#x6784;&#x56FE;"><b>1.3.1. </b>O-RU6&#x7684;&#x67B6;&#x6784;&#x56FE;</a></li></ul><li><span class="title-icon "></span><a href="#o-ran-&#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;"><b>1.4. </b>O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;</a></li><ul><li><span class="title-icon "></span><a href="#option7&#x5206;&#x79BB;&#x5F0F;&#x5206;&#x5C42;&#x90E8;&#x7F72;"><b>1.4.1. </b>Option7&#x5206;&#x79BB;&#x5F0F;&#x5206;&#x5C42;&#x90E8;&#x7F72;</a></li><li><span class="title-icon "></span><a href="#option7&#x90E8;&#x7F72;&#x4E0B;front-gateway&#xFF08;fhgw7&#xFF09;&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;"><b>1.4.2. </b>Option7&#x90E8;&#x7F72;&#x4E0B;Front Gateway&#xFF08;FHGW7&#xFF09;&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;</a></li></ul></ul></ul></div><a href="#o-ran-&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="o-ran-&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;"><a name="o-ran-&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;" class="anchor-navigation-ex-anchor" href="#o-ran-&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1. O-RAN &#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;</h1>
+<h2 id="&#x8F6F;&#x4EF6;&#x7684;&#x9ED1;&#x76D2;&#x6D4B;&#x8BD5;&#x548C;&#x767D;&#x76D2;&#x6D4B;&#x8BD5;"><a name="&#x8F6F;&#x4EF6;&#x7684;&#x9ED1;&#x76D2;&#x6D4B;&#x8BD5;&#x548C;&#x767D;&#x76D2;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x8F6F;&#x4EF6;&#x7684;&#x9ED1;&#x76D2;&#x6D4B;&#x8BD5;&#x548C;&#x767D;&#x76D2;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x8F6F;&#x4EF6;&#x7684;&#x9ED1;&#x76D2;&#x6D4B;&#x8BD5;&#x548C;&#x767D;&#x76D2;&#x6D4B;&#x8BD5;</h2>
+<p><img src="images/s-test.png" alt="ORAN&#x4E13;&#x9898;&#x7CFB;&#x5217;-4&#xFF1A;&#x4E00;&#x6587;&#x8BF4;&#x900F;&#x4EC0;&#x4E48;&#x662F;5G O-RAN&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;_ORAN"></p>
+<p><strong>1&#x3001;&#x8F6F;&#x4EF6;&#x7684;&#x9ED1;&#x76D2;&#x6D4B;&#x8BD5;&#xFF1A;</strong></p>
+<p>&#x53C8;&#x53EB;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;&#xFF0C;&#x628A;&#x5F85;&#x6D4B;&#x8BD5;&#x8F6F;&#x4EF6;&#x5BF9;&#x8C61;&#x770B;&#x6210;&#x4E00;&#x4E2A;&#x9ED1;&#x76D2;&#x5B50;&#xFF0C;&#x53EA;&#x5173;&#x6CE8;&#x8F6F;&#x4EF6;&#x7684;&#x5BF9;&#x5916;&#x63A5;&#x53E3;&#xFF0C;&#x5B8C;&#x5168;&#x4E0D;&#x8003;&#x8651;&#x7A0B;&#x5E8F;&#x5185;&#x90E8;&#x7684;&#x903B;&#x8F91;&#x7ED3;&#x6784;&#x548C;&#x5185;&#x90E8;&#x7279;&#x6027;&#xFF0C;&#x4F9D;&#x636E;&#x7A0B;&#x5E8F;&#x7684;&#x9700;&#x6C42;&#x89C4;&#x683C;&#x8BF4;&#x660E;&#x4E66;&#xFF0C;&#x68C0;&#x67E5;&#x7A0B;&#x5E8F;&#x7684;&#x529F;&#x80FD;&#x662F;&#x5426;&#x7B26;&#x5408;&#x5B83;&#x7684;&#x529F;&#x80FD;&#x8BF4;&#x660E;&#x3002;</p>
+<p> <strong>2&#x3001;&#x8F6F;&#x4EF6;&#x7684;&#x767D;&#x76D2;&#x6D4B;&#x8BD5;</strong></p>
+<p>&#x6709;&#x53C8;&#x53EB;&#x7ED3;&#x6784;&#x6D4B;&#x8BD5;&#xFF0C;&#x628A;&#x6D4B;&#x8BD5;&#x8F6F;&#x4EF6;&#x5BF9;&#x8C61;&#x770B;&#x6210;&#x4E00;&#x4E2A;&#x6253;&#x5F00;&#x7684;&#x76D2;&#x5B50;&#xFF0C;&#x5229;&#x7528;&#x7A0B;&#x5E8F;&#x5185;&#x90E8;&#x7684;&#x903B;&#x8F91;&#x7ED3;&#x6784;&#x53CA;&#x6709;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x8BBE;&#x8BA1;&#x6216;&#x9009;&#x62E9;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;, &#x5BF9;&#x7A0B;&#x5E8F;&#x7684;&#x6240;&#x6709;&#x903B;&#x8F91;&#x8DEF;&#x5F84;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x901A;&#x8FC7;&#x5728;&#x4E0D;&#x540C;&#x70B9;&#x68C0;&#x67E5;&#x7A0B;&#x5E8F;&#x72B6;&#x6001;&#xFF0C;&#x5426;&#x4E0E;&#x9884;&#x671F;&#x7684;&#x72B6;&#x6001;&#x4E00;&#x81F4;&#x3002;</p>
+<h2 id="5g&#x534F;&#x8BAE;&#x6808;&#x529F;&#x80FD;&#x5207;&#x5206;&#x9009;&#x9879;&#x4E0E;o-ran&#x767D;&#x76D2;&#x5316;"><a name="5g&#x534F;&#x8BAE;&#x6808;&#x529F;&#x80FD;&#x5207;&#x5206;&#x9009;&#x9879;&#x4E0E;o-ran&#x767D;&#x76D2;&#x5316;" class="anchor-navigation-ex-anchor" href="#5g&#x534F;&#x8BAE;&#x6808;&#x529F;&#x80FD;&#x5207;&#x5206;&#x9009;&#x9879;&#x4E0E;o-ran&#x767D;&#x76D2;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. 5G&#x534F;&#x8BAE;&#x6808;&#x529F;&#x80FD;&#x5207;&#x5206;&#x9009;&#x9879;&#x4E0E;O-RAN&#x767D;&#x76D2;&#x5316;</h2>
+<p>&#x767D;&#x76D2;&#x5316;&#x5C0F;&#x57FA;&#x7AD9;&#x7ECF;&#x5E38;&#x63D0;&#x5230;Option6,7,8&#xFF0C; &#x4E3A;&#x5565;&#x6CA1;&#x6709;Opiton1-5&#x5462;&#xFF1F;</p>
+<p>&#x4ECE;&#x4E0B;&#x56FE;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x539F;&#x56E0;&#x3002;</p>
+<p><img src="images/o-ran-write-box-01.png" alt="img"></p>
+<p><img src="images/option7-8-0.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<p><img src="images/option7-8.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<p>&#x9009;&#x9879;1-8&#x662F;<a href="https://so.csdn.net/so/search?q=5G&amp;spm=1001.2101.3001.7020" target="_blank">5G</a>&#x534F;&#x8BAE;&#x6808;&#x7684;&#x529F;&#x80FD;&#x5207;&#x5206;&#x70B9;&#x3002;</p>
+<p><img src="images/o-ran-write-box.png" alt="img"></p>
+<p>O-RAN&#x5206;&#x79BB;&#x5F0F;&#x57FA;&#x7AD9;&#xFF0C;&#x53EA;&#x4F7F;&#x7528;&#x4E86;Option6-8&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5728;O-RAN&#x4E2D;&#xFF0C;&#x6700;&#x591A;&#x628A;High-PHY&#x653E;&#x5230;O-RU&#x4E2D;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>High-PHY&#x4E4B;&#x4E0A;&#x7684;&#x529F;&#x80FD;&#x9700;&#x653E;&#x5230;O-DU&#x6216;O-CU&#x4E2D;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x4E00;&#x4F53;&#x5316;O-RAN&#x5C0F;&#x57FA;&#x7AD9;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x662F;Option2.</p>
+<h2 id="o-ran-&#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;option6&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;"><a name="o-ran-&#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;option6&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;" class="anchor-navigation-ex-anchor" href="#o-ran-&#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;option6&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option6&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;</h2>
+<p>&#x5728;5G&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x628A;L1 PHY&#x5C42;&#x8FDB;&#x4E00;&#x6B65;&#x5206;&#x6210;&#x4E86;High-PHY&#x548C;Low-PHY&#x3002;</p>
+<p>High-PHY&#x662F;&#x6307;L1&#x4E2D;&#xFF0C;&#x4E0E;DSP&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x7684;&#x5F3A;&#x76F8;&#x5173;&#x6027;&#x8F6F;&#x4EF6;&#x5B9E;&#x4F53;&#x3002;</p>
+<p>Low-PHY&#x662F;&#x90A3;&#x4E9B;&#x4E0E;DSP&#x6709;&#x5F3A;&#x76F8;&#x5173;&#x6027;&#x7684;&#x8F6F;&#x4EF6;&#x5B9E;&#x4F53;&#x3002;</p>
+<p><img src="images/o-ran-write-box.png" alt="img"></p>
+<p>&#x6839;&#x636E;&#x628A;High-PHY&#x548C;Low-PHY&#x90E8;&#x7F72;DU&#x6216;RU&#x7684;&#x65B9;&#x6848;&#x4E0D;&#x540C;&#xFF0C;&#x5206;&#x4E3A;&#x4E86;4&#x4E2D;&#x9009;&#x9879;&#xFF1A;</p>
+<p>&#x5982;&#x4E0B;&#x79F0;&#x4E3A;Option6,  Option7,  Option8 &#x4EE5;&#x53CA; option7-8&#x3002;</p>
+<p>High-PHY&#x548C;Low-PHY&#x90E8;&#x7F72;&#x7684;&#x65B9;&#x6848;&#x4E0D;&#x540C;&#xFF0C;O-DU&#x548C;O-RU&#x4E4B;&#x95F4;&#x7684;Front Haul&#x63A5;&#x53E3;&#x534F;&#x8BAE;&#x4E5F;&#x968F;&#x4E4B;&#x6709;&#x5DEE;&#x522B;&#xFF0C;&#x8FD9;&#x662F;Front Haul&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x4E00;&#x4E2A;&#x6700;&#x91CD;&#x8981;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x540E;&#x7EED;&#x518D;&#x7528;&#x5355;&#x72EC;&#x7684;&#x7AE0;&#x8282;&#x8BA8;&#x8BBA;Front Haul&#x63A5;&#x53E3;&#x534F;&#x8BAE;&#x7684;&#x5F00;&#x653E;&#x95EE;&#x9898;&#x3002;</p>
+<h3 id="o-ru6&#x7684;&#x67B6;&#x6784;&#x56FE;"><a name="o-ru6&#x7684;&#x67B6;&#x6784;&#x56FE;" class="anchor-navigation-ex-anchor" href="#o-ru6&#x7684;&#x67B6;&#x6784;&#x56FE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. O-RU6&#x7684;&#x67B6;&#x6784;&#x56FE;</h3>
+<p><img src="images/o-ru6.png" alt="ORAN&#x4E13;&#x9898;&#x7CFB;&#x5217;-6&#xFF1A;5G O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option6&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;_2/3/4/5g_08"></p>
+<ul>
+<li><strong>Ethernet&#xFF1A;</strong>&#x4EE5;&#x592A;&#x7F51;&#x4EA4;&#x6362;&#x63A7;&#x5236;&#x5668;</li>
+<li><strong>Timing Unit&#xFF1A;</strong>&#x5B9A;&#x65F6;&#x6A21;&#x5757;&#xFF0C;&#x5305;&#x62EC;&#x672C;&#x5730;&#x6676;&#x632F;&#x3001;&#x672C;&#x5730;&#x9501;&#x76F8;&#x73AF;&#x548C;&#x5B9A;&#x65F6;&#x6A21;&#x5757;&#x7684;&#x53C2;&#x8003;&#x65F6;&#x949F;&#x6E90;&#xFF0C;&#x901A;&#x5E38;&#x662F;IEEE 1588&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;GPS.</li>
+<li><strong>Digital Processing&#xFF1A;</strong>&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5355;&#x5143;</li>
+<li><strong>RF Processing&#xFF1A;</strong>&#x6A21;&#x62DF;&#x5C04;&#x9891;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5355;&#x5143;</li>
+</ul>
+<p><strong>RU RF&#x5904;&#x7406;&#x5355;&#x5143;:</strong></p>
+<p><img src="images/o-ru6-01.png" alt="ORAN&#x4E13;&#x9898;&#x7CFB;&#x5217;-6&#xFF1A;5G O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option6&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;_&#x6570;&#x5B57;&#x901A;&#x4FE1;_10"></p>
+<ul>
+<li><strong>ANT:</strong> &#x5929;&#x7EBF;&#xFF0C;&#x7528;&#x4E8E;&#x628A;&#x6A21;&#x62DF;&#x7684;&#x7535;&#x78C1;&#x6CE2;&#x53D1;&#x9001;&#x5230;&#x7A7A;&#x6C14;&#x4E2D;&#x3002;</li>
+<li><strong>PA&#xFF1A;</strong>&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x662F;&#x529F;&#x7387;&#x653E;&#x5927;&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x5728;&#x53D1;&#x5C04;&#x673A;&#x7684;&#x6700;&#x540E;&#x4E00;&#x7EA7;&#xFF0C;&#x628A;&#x65E0;&#x7EBF;&#x9AD8;&#x9891;&#x6A21;&#x62DF;&#x8F7D;&#x6CE2;&#x4FE1;&#x53F7;&#x7684;&#x529F;&#x7387;&#x653E;&#x5927;&#xFF0C;&#x529F;&#x7387;&#x8D8A;&#x5927;&#xFF0C;&#x53D1;&#x9001;&#x7684;&#x8DDD;&#x79BB;&#x8D8A;&#x8FDC;&#x3002;</li>
+<li><strong>LNA:</strong> &#x4F4E;&#x566A;&#x58F0;&#x653E;&#x5927;&#x5668;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x7535;&#x8DEF;&#x8BBE;&#x8BA1;&#x4E2D;&#x3002;&#x56E0;&#x4E3A;&#x63A5;&#x6536;&#x7535;&#x8DEF;&#x4E2D;&#x7684;&#x4FE1;&#x566A;&#x6BD4;&#x901A;&#x5E38;&#x662F;&#x5F88;&#x4F4E;&#x7684;&#xFF0C;&#x5F80;&#x5F80;&#x4FE1;&#x53F7;&#x8FDC;&#x5C0F;&#x4E8E;&#x566A;&#x58F0;&#xFF0C;&#x901A;&#x8FC7;&#x653E;&#x5927;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4FE1;&#x53F7;&#x548C;&#x566A;&#x58F0;&#x4E00;&#x8D77;&#x88AB;&#x653E;&#x5927;&#x7684;&#x8BDD;&#x975E;&#x5E38;&#x4E0D;&#x5229;&#x4E8E;&#x540E;&#x7EED;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x5C31;&#x8981;&#x6C42;&#x653E;&#x5927;&#x5668;&#x80FD;&#x591F;&#x6291;&#x5236;&#x566A;&#x58F0;&#x3002;</li>
+<li><strong>Transceiver ADC/DAC:</strong> &#x6570;&#x6A21;&#x8F6C;&#x6362;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x628A;&#x6A21;&#x62DF;&#x4FE1;&#x53F7;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x3002;</li>
+</ul>
+<p><strong>&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5355;&#x5143;&#xFF1A;</strong></p>
+<p><img src="images/o-ru6-02.png" alt="ORAN&#x4E13;&#x9898;&#x7CFB;&#x5217;-6&#xFF1A;5G O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option6&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;_ORAN_11"></p>
+<p><strong>Radio&#x5C42;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5355;&#x5143;</strong></p>
+<ul>
+<li><strong>CFR:</strong> &#x662F;&#x7528;&#x6765;&#x964D;&#x4F4E;&#x5CF0;&#x5747;&#x529F;&#x7387;&#x6BD4;&#x3002;</li>
+<li><strong>DPD:</strong> &#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x5CF0;&#x5747;&#x529F;&#x7387;&#x6BD4;&#x8FC7;&#x5927;&#x6240;&#x5BFC;&#x81F4;&#x7684;&#x975E;&#x7EBF;&#x6027;&#x95EE;&#x9898;&#x3002;</li>
+</ul>
+<p><strong>L1 PHY&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5355;&#x5143;</strong></p>
+<ul>
+<li>High-PHY</li>
+<li>Low-PHY</li>
+</ul>
+<p><strong>nFAPIHandler&#xFF1A;</strong></p>
+<p><strong>Open-nFAPI&#x539F;&#x672C;&#x4E0D;&#x662F;5G&#x7684;&#x89C4;&#x8303;&#xFF0C;&#x800C;&#x662F;&#x5C0F;&#x57FA;&#x7AD9;small-cell&#x8BBA;&#x575B;&#x5236;&#x5B9A;&#x7684;L2&#x548C;L1&#x4E4B;&#x95F4;&#x4E00;&#x4E2A;&#x8DE8;&#x7F51;&#x5143;&#x901A;&#x4FE1;&#x7684;&#x5F00;&#x653E;&#x7684;&#x63A5;&#x53E3;&#x534F;&#x8BAE;&#xFF0C;&#x4EE5;&#x5141;&#x8BB8;VNF&#xFF08;&#x7F51;&#x7EDC;&#x529F;&#x80FD;&#x865A;&#x62DF;&#x5316;&#xFF09;&#x548C;PNF&#xFF08;&#x7269;&#x7406;&#x7F51;&#x7EDC;&#x529F;&#x80FD;&#xFF09;&#x548C;&#x4E4B;&#x95F4;&#x7684;&#x4E92;&#x64CD;&#x4F5C;&#x6027;&#xFF0C;&#x5E76;&#x4FC3;&#x8FDB;&#x4E0D;&#x540C;VNF&#x4E4B;&#x95F4;&#x7684;PNF&#x5171;&#x4EAB;&#x3002;</strong></p>
+<p>&#x8FD9;&#x91CC;VNF&#x662F;L2&#xFF0C;&#x8FD0;&#x884C;&#x5728;O-DU&#x4E0A;&#xFF0C;PNF&#x662F;L1,&#x8FD0;&#x884C;&#x5728;O-RU&#x4E0A;&#x3002;</p>
+<h2 id="o-ran-&#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;"><a name="o-ran-&#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;" class="anchor-navigation-ex-anchor" href="#o-ran-&#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;</h2>
+<h3 id="option7&#x5206;&#x79BB;&#x5F0F;&#x5206;&#x5C42;&#x90E8;&#x7F72;"><a name="option7&#x5206;&#x79BB;&#x5F0F;&#x5206;&#x5C42;&#x90E8;&#x7F72;" class="anchor-navigation-ex-anchor" href="#option7&#x5206;&#x79BB;&#x5F0F;&#x5206;&#x5C42;&#x90E8;&#x7F72;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.1. Option7&#x5206;&#x79BB;&#x5F0F;&#x5206;&#x5C42;&#x90E8;&#x7F72;</h3>
+<p>O-DU&#x4E0E;O-RU&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;FHGW&#x76F8;&#x8FDE;&#xFF0C;&#x79F0;&#x4E3A;&#x5206;&#x5C42;&#x90E8;&#x7F72;&#x3002;</p>
+<p><img src="images/o-ru7-01.png" alt="ORAN&#x4E13;&#x9898;&#x7CFB;&#x5217;-7&#xFF1A;5G O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;_&#x7F51;&#x7EDC;&#x901A;&#x4FE1;_04"></p>
+<p>&#x5728;&#x5E7F;&#x8986;&#x76D6;&#x7684;&#x5E94;&#x7528;&#x9886;&#x57DF;&#xFF0C;&#x63A8;&#x8350;&#x901A;&#x8FC7;FHGW&#xFF08;fronthaul Gateway&#xFF09;&#x7F51;&#x5173;&#x76F8;&#x8FDE;&#x3002;</p>
+<p>&#x901A;&#x8FC7;FHGW&#x7684;&#x591A;&#x64AD;&#x548C;&#x6C47;&#x96C6;&#x529F;&#x80FD;&#xFF0C;&#x5927;&#x91CF;&#x8282;&#x7701;O-DU&#x548C;O-RU&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x5E26;&#x5BBD;&#x3002;</p>
+<p>&#x5728;&#x6B64;&#x65B9;&#x6848;&#x4E2D;&#xFF0C;O-DU&#x548C;O-RU&#x4E4B;&#x95F4;&#xFF0C;&#x867D;&#x7136;&#x662F;&#x4EE5;&#x592A;&#x7F51;&#x8FDE;&#x63A5;, &#x4F46;&#x7F51;&#x5173;&#x8981;&#x8FDB;&#x884C;&#x591A;&#x64AD;&#x548C;&#x6C47;&#x96C6;&#x7684;&#x662F;IQ&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x7528;&#x7684;&#x4EE5;&#x592A;&#x7F51;&#x4EA4;&#x6362;&#x673A;&#x662F;&#x4E0D;&#x5408;&#x9002;&#x7684;&#xFF0C;<strong>eCPRI&#x662F;&#x8FD9;&#x91CC;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x628A;IO&#x6570;&#x636E;&#x627F;&#x8F7D;&#x5728;UDP/IP/&#x4EE5;&#x592A;&#x7F51;&#x4E4B;&#x4E0A;</strong>&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x7F51;&#x5173;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;eCPRI&#x4EA4;&#x6362;&#x673A;&#xFF0C;&#x6216;eCPRI Hub&#x3002;</p>
+<h3 id="option7&#x90E8;&#x7F72;&#x4E0B;front-gateway&#xFF08;fhgw7&#xFF09;&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;"><a name="option7&#x90E8;&#x7F72;&#x4E0B;front-gateway&#xFF08;fhgw7&#xFF09;&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;" class="anchor-navigation-ex-anchor" href="#option7&#x90E8;&#x7F72;&#x4E0B;front-gateway&#xFF08;fhgw7&#xFF09;&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.2. Option7&#x90E8;&#x7F72;&#x4E0B;Front Gateway&#xFF08;FHGW7&#xFF09;&#x7684;&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;</h3>
+<p><strong>&#xFF08;1&#xFF09;FHGW7&#x7684;&#x786C;&#x4EF6;&#x67B6;&#x6784;&#x56FE;</strong></p>
+<p><img src="images/o-ru7-02.png" alt="ORAN&#x4E13;&#x9898;&#x7CFB;&#x5217;-7&#xFF1A;5G O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;_2/3/4/5g_06"></p>
+<p><strong>&#x524D;&#x5411;&#x548C;&#x540E;&#x5411;&#x63A5;&#x53E3;&#xFF1A;</strong></p>
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x90FD;&#x662F;&#x666E;&#x901A;&#x4EE5;&#x592A;&#x7F51;&#x63A5;&#x53E3;&#x3002;</p>
+<p><strong>&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5355;&#x5143;&#xFF1A;</strong></p>
+<p>&#x867D;&#x7136;&#x4E0A;&#x8FF0;&#x63A5;&#x53E3;&#x662F;&#x4EE5;&#x592A;&#x7F51;&#xFF0C;&#x4F46;&#x4EE5;&#x592A;&#x7F51;&#x4E4B;&#x4E0A;&#x627F;&#x8F7D;&#x7684;High-PHY&#x4E0E;Low-PHY&#x4EA4;&#x6362;&#x7684;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x5374;&#x662F;5G&#x65B0;&#x5B9A;&#x4E49;&#x7684;&#x3002;eCPRI&#x5C31;&#x5728;&#x8BDE;&#x751F;&#x5728;&#x8FD9;&#x91CC;&#x3002;</p>
+<p><img src="images/o-ru7-03.png" alt="ORAN&#x4E13;&#x9898;&#x7CFB;&#x5217;-7&#xFF1A;5G O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;_&#x6570;&#x5B57;&#x901A;&#x4FE1;_07"></p>
+<p>&#x5F88;&#x663E;&#x7136;FHGW7&#x4E0D;&#x662F;&#x666E;&#x901A;&#x7684;&#x4EE5;&#x592A;&#x7F51;&#x4EA4;&#x6362;&#x673A;&#xFF0C;&#x800C;&#x662F;&#x4E13;&#x7528;&#x7684;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5355;&#x5143;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x4E0A;&#x56FE;&#x4E2D;&#x7684;eCPRI&#x534F;&#x8BAE;&#x5C42;&#x548C;IO user data&#x5C42;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x901A;&#x5E38;&#x9700;&#x8981;FPGA&#x6216;&#x4E13;&#x7528;&#x7684;DSP&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x65E2;&#x7136;eCPRI&#x662F;&#x627F;&#x8F7D;&#x5728;&#x4EE5;&#x592A;&#x7F51;, &#x6216;&#x8005;&#x8BF4;&#x662F;UDP&#x4E4B;&#x4E0A;&#x7684;&#xFF0C;&#x4E3A;&#x5565;&#x4E0D;&#x50CF;FHGW6&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684;&#x4EE5;&#x592A;&#x7F51;&#x4EA4;&#x6362;&#x6216;&#x8DEF;&#x7531;&#x5668;&#xFF0C;&#x5728;O-DU&#x548C;O-RU&#x4E4B;&#x95F4;&#x8F6C;&#x53D1;&#x4EE5;MAC&#x5C42;&#x6216;IP&#x5C42;&#x6570;&#x636E;&#x5462;&#xFF1F;</p>
+<p>&#x5176;&#x6839;&#x672C;&#x539F;&#x56E0;&#x662F;&#xFF0C;&#x4E3A;&#x4E86;&#x964D;&#x4F4E;O-DU&#x548C;O-RU&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x6D41;&#x91CF;&#xFF0C;FHGW7&#x8FD8;&#x9700;&#x8981;&#x652F;&#x6301;&#xFF1A;</p>
+<ul>
+<li>&#x4E0B;&#x884C;&#xFF1A;&#x652F;&#x6301;&#x8702;&#x7A9D;&#x5C0F;&#x533A;&#x7EA7;&#xFF08;Cell&#xFF09;&#x7684;&#x6570;&#x636E;&#x7684;&#x5E7F;&#x64AD;&#xFF0C;&#x800C;&#x4E0D;&#x662F;MAC&#x5C42;&#x6216;IP&#x5C42;&#x7684;&#x5E7F;&#x64AD;</li>
+<li>&#x4E0A;&#x884C;&#xFF1A;&#x652F;&#x6301;&#x8702;&#x7A9D;&#x5C0F;&#x533A;&#x7EA7;&#xFF08;Cell&#xFF09;&#x7684;&#x6570;&#x636E;&#x7684;&#x6C47;&#x96C6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;MAC&#x5C42;&#x6216;IP&#x5C42;&#x7684;&#x6C47;&#x96C6;</li>
+</ul>
+<p><strong>&#xFF08;2&#xFF09;FHGW&#x529F;&#x80FD;&#x6A21;&#x5757;&#x56FE;&#x7684;&#x63A5;&#x53E3;</strong></p>
+<p><img src="images/o-ru7-04.png" alt="ORAN&#x4E13;&#x9898;&#x7CFB;&#x5217;-7&#xFF1A;5G O-RAN &#x5206;&#x4F53;&#x5F0F;&#x5C0F;&#x57FA;&#x7AD9;Option7&#x786C;&#x4EF6;&#x767D;&#x76D2;&#x5316;&#x7684;&#x53C2;&#x8003;&#x67B6;&#x6784;_2/3/4/5g_08"></p>
+<ul>
+<li><strong>&#x6570;&#x5B57;&#x5904;&#x7406;&#x5355;&#x5143;&#xFF1A;</strong>&#x8702;&#x7A9D;&#x5C0F;&#x533A;&#x7EA7;IQ&#x6570;&#x636E;&#x7684;&#x5E7F;&#x64AD;&#x548C;&#x6C47;&#x96C6;&#x529F;&#x80FD;&#x3002;</li>
+<li><strong>POE++&#xFF1A;</strong>power over ethernet&#xFF0C;&#x901A;&#x8FC7;POE&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED9;RU&#x8FDB;&#x884C;&#x8FDC;&#x7A0B;&#x4F9B;&#x7535;&#x3002;</li>
+<li>DC/DC&#xFF1A;&#x76F4;&#x6D41;&#x7535;&#x6E90;&#x8F6C;&#x6362;&#x3002;</li>
+<li>CLK: &#x672C;&#x5730;&#x65F6;&#x949F;</li>
+<li>Memory&#xFF1A;DDR3/4&#x5185;&#x5B58;</li>
+<li>SPI: SPI flash&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x56FA;&#x4EF6;&#x3002;</li>
+<li>Debug interface&#xFF1A;&#x4E32;&#x53E3;&#x3001;Jtag&#x8C03;&#x8BD5;&#x53E3;&#x3002;</li>
+<li><strong>Ethernet:</strong> &#x4EE5;&#x592A;&#x7F51;&#x63A5;&#x53E3;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.ORAN_Architecture.html" class="navigation navigation-prev " aria-label="Previous page: 1. O-RAN 总体架构与概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3.ORAN_OAM_OM.html" class="navigation navigation-next " aria-label="Next page: 3. O-RAN OAM操作维护管理架构">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2. O-RAN 白盒化","level":"1.2.2","depth":2,"next":{"title":"3. O-RAN OAM操作维护管理架构","level":"1.2.3","depth":2,"path":"ORAN/3.ORAN_OAM_OM.md","ref":"ORAN/3.ORAN_OAM_OM.md","articles":[]},"previous":{"title":"1. O-RAN 总体架构与概述","level":"1.2.1","depth":2,"path":"ORAN/1.ORAN_Architecture.md","ref":"ORAN/1.ORAN_Architecture.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","prism","ace","copy-code-button","splitter","back-to-top-button","chapter-fold","expandable-chapters-small","favicon","autotheme","advanced-emoji","book-summary-scroll-position-saver","anchor-navigation-ex","emphasize","theme-comscore","multipart"],"ignores":["_book","node_modules"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"emphasize":{},"ace":{},"book-summary-scroll-position-saver":{},"splitter":{},"search-pro":{},"multipart":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"family":"serif","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"/assets/images/favicon.ico","bookmark":"/assets/images/favicon.ico","appleTouch":"/assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"/assets/images/apple-touch-icon-120x120.png","180x180":"/assets/images/apple-touch-icon-180x180.png"}},"theme-comscore":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"autotheme":{"night":[20,21,22,23,0,1,2,3,4,5],"sepia":[6,7,8,18,19,19],"white":[9,10,11,12,13,14,15,16,17]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Mr.Miaow","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"C note","language":"zh-hans","gitbook":"3.x.x","description":"C note"},"file":{"path":"ORAN/2.ORAN_white_box.md","mtime":"2022-05-17T08:44:37.878Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-08T02:50:36.798Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-autotheme/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
